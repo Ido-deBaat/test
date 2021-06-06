@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
     height: 4em;
     height: calc(var(--menu-height, 4) * 1em);
     padding: .5em;
+    padding-bottom: calc(env(safe-area-inset-bottom) + .5em);
     width: 100%;
     border-top: .5px solid #4939f3;
     background-color: #eeeeee;
@@ -65,7 +66,6 @@ h1, h2, h3, h4, h5, h6, p, pre {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-    padding-bottom: env(safe-area-inset-bottom);
 
     border-radius: 2px;
     box-shadow: 
