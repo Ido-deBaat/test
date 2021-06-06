@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
     position: fixed;
     overflow: hidden;
     bottom: 0;
-    height: 4em;
+    height: var(--menu-height, 4em);
     padding: .5em;
     width: 100%;
     border-top: .5px solid #4939f3;
