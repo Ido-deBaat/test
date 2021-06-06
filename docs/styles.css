@@ -79,7 +79,7 @@ background-color: #eeeeee;
     left: 50%;
     margin-left: calc((var(--menuButtonSize) * -1px) / 2);
 
-    border: 1px solid #8b8b8b;
+    border: 1px solid #ffffff;
     border-radius: 50%;
     background-color: rgba(240, 240, 240, 0.9);
     background-color: rgba(255, 255, 255, 0.4);
