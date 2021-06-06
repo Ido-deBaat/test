@@ -14,6 +14,7 @@ html, .root {font-size: 16px; line-height: 24px; height: 100%}
 /*html {background-color: #161825;}*/
 
 body, .article {
+    height: 100%;
     margin: 0;
     font-family: 'Mulish', sans-serif;
     font-size: 1em;
@@ -37,16 +38,19 @@ h1, h2, h3, h4, h5, h6, p, pre {
     margin-right: 16px;
 }
 
-.page-container {}
+.page-container {height: 100%;}
 
 .content-container {
-    padding-bottom: var(--menu-height, 4em);
+    height: 100%;
+    margin-bottom: 4em;
+    margin-bottom: var(--menu-height, 4em);
 }
 
 .menu-container {
     position: fixed;
     overflow: hidden;
     bottom: 0;
+    height: 4em;
     height: var(--menu-height, 4em);
     padding: .5em;
     width: 100%;
@@ -67,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
 }
 
 .title-wrapper {
-    height: 110%;
+    height: calc(100% - var(--menu-height, 4em) + 1em);
     margin-top: -5%;
     width: 100%;
     background-color: #4939f3;
