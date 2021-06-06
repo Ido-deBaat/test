@@ -20,8 +20,8 @@ body, .article {
     line-height: 1.5em;
     color: #161825;
     /*    color: #e2e2f7;*/
-    height: 100%;
-        background-color: #f0f0f0;
+    /*    height: 100%;s*/
+    background-color: #f0f0f0;
 }
 
 div, pre {box-sizing: border-box;}
@@ -37,19 +37,20 @@ h1, h2, h3, h4, h5, h6, p, pre {
 }
 
 .page-container {
-/*    height: 100%;*/
-/*    overflow: hidden;*/
+    /*    height: 100%;*/
+    /*    overflow: hidden;*/
 }
 
 .content-container {
-/*    height: calc(100% - 4em);*/
+    /*    height: calc(100% - 4em);*/
     /*    padding-bottom: 2em;*/
-/*    overflow-y: scroll;*/
+    /*    overflow-y: scroll;*/
     padding-bottom: 4em;
 }
 
 .menu-container {
     position: fixed;
+    overflow: hidden;
     bottom: 0;
     height: 4em;
     padding: .5em;
@@ -124,7 +125,7 @@ pre, code {
 li {
     margin-left: 0;
     margin-right: 0;
-/*    padding: 50px;*/
+    /*    padding: 50px;*/
 }
 
 li > p {
