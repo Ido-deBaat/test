@@ -21,7 +21,7 @@ body, .article {
     color: #161825;
     background-color: #f0f0f0;
     
-    --menu-height: 16em;
+    --menu-height: 6em;
     --prim-col: #4939f3;
 }
 
@@ -37,15 +37,9 @@ h1, h2, h3, h4, h5, h6, p, pre {
     margin-right: 16px;
 }
 
-.page-container {
-    /*    height: 100%;*/
-    /*    overflow: hidden;*/
-}
+.page-container {}
 
 .content-container {
-    /*    height: calc(100% - 4em);*/
-    /*    padding-bottom: 2em;*/
-    /*    overflow-y: scroll;*/
     padding-bottom: var(--menu-height, 4em);
 }
 
