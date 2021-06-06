@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" color-mode="light">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="page-container">
+
+            <div class="content-container">
+<!--                <div class="title-wrapper">test</div>-->
+                <div id="assignment" class="section level1">
+                    <h1>Assignment</h1>
+                    <p>Laten we beginnen met assignment. Dit is uiteindelijk één van de belangrijkste onderdelen van een programmeertaal.</p>
+<!--
+                    <p class="intro">Assignment is niets anders dan het aanmaken van een variabele. Je hebt hiervoor drie zaken nodig: een <strong>naam</strong> voor je variabele; een <strong>assignment operator</strong> om R te vertellen dat je een variabele aan het aanmaken bent en een <strong>waarde</strong> die je aan de variabele wilt toe kennen.</p>
+                    <p>Het ziet er zo uit:</p>
+                    <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span></code></pre></div>
+                    <p>Als je dit zou moeten uitspreken zou je kunnen zeggen <em>“x krijgt 10”</em>. In dit geval is <code>x</code> is de naam voor de variabele, <code>&lt;-</code> is de assignment operator en <code>10</code> is de waarde.</p>
+                    <p>Wil je <code>x</code> zien, kun je zeggen <code>print(x)</code> maar dat hoeft niet. Simpelweg <code>x</code> invoeren en runnen is voldoende:</p>
+                    <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+                    <pre><code>## [1] 10</code></pre>
+                    <p>Je kunt <code>x</code> nu dus gebruiken bij alles wat je doet:</p>
+                    <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div>
+                    <pre><code>## [1] 5</code></pre>
+-->
+                    <div id="environment" class="section level2">
+                        <h2>Environment</h2>
+                        <p>Als je een variabele aanmaakt, beland deze in de zo genaamde <em>global environment</em>. Dit kun je zien als het korte termijn geheugen van R. Alles wat jij aangemaakt hebt staat daar, totdat je R afsluit. Zorg er dus voor dat je de code bewaart waarmee je de variabelen gemaakt hebt in een R(Markdown)-script. Hierdoor kun de variabelen die je nodig hebt voor jouw analyse reproduceren.</p>
+                        <p></p><div class="sidenote"><h6>volgorde is belangrijk</h6><p>Het is ook niet onbelangrijk dat R je script altijd van boven naar onder leest. Je moet er dus voor zorgen dat je een variabele pas gebruikt nadat je deze hebt aangemaakt.</p></div><p></p>
+                        <p>Het environment scherm (eerste tab’je links boven in de RStudio IDE) geeft een overzicht van alle variabelen die je aangemaakt hebt tijdens jouw R sessie.</p>
+                    </div>
+                    <div id="namen-voor-variabelen" class="section level2">
+                        <h2>Namen voor variabelen</h2>
+                        <p>Een variabele hoeft niet persee <code>x</code>, <code>y</code> of <code>z</code> te heten; je mag iedere naam verzinnen, maar er zijn wel regels:</p>
+                        <div id="technische-regels" class="section level3">
+                            <h3>Technische regels</h3>
+                            <p>De technische regels hebben simpel weg te maken de werking van <strong>R</strong>. Houdt je deze regels niet aan, krijg je errors.</p>
+                            <ul>
+                                <li><p>Een variabele naam mag bestaan uit <strong>letters</strong>, <strong>cijfers</strong>, <strong>underscores</strong> <code>_</code> en <strong>punten</strong> <code>.</code>, maar…</p></li>
+                                <li><p>je moet beginnen met een letter (of een punt, maar variabelen beginnend met een punt zijn verborgen variabelen en daarmee niet zichtbaar in de environment).</p></li>
+                                <li><p><strong>R</strong> is hoofdletter gevoelig! Een kleine <code>x</code> is niet dezelfde variabele als hoofdletter <code>X</code>.</p></li>
+                            </ul>
+                            <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>zichtbaar_1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># dit is ongeveer de bedoeling</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>._verborgen <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># dit kan, maar het wordt een verborgen variabele</span></span></code></pre></div>
+                        </div>
+                        <div id="ongeschreven-regels" class="section level3">
+                            <h3>Ongeschreven regels</h3>
+                            <p>Natuurlijk zijn er ook ongeschreven regels voor variabelen namen. Ten eerste is het verstandig om zo veel mogelijk logische en begrijpelijke namen te verzinnen die voor iedereen (inclusief jijzelf over twee jaar) leesbaar zijn. Wordt het te cryptisch en te complex wordt het naar verloop van tijd steeds moeilijker om (je eigen) code te begrijpen:</p>
+                            <p><code>omzet_q1_2021</code> is al een stuk beter dan <code>omz21q1</code>, of <code>summary_klantsegment_a</code> vs.&nbsp;<code>ksA</code>.</p>
+                            <p></p><div class="sidenote"><h6>tip</h6><p>Wij raden aan zo veel mogelijk snake_case te gebruiken, omdat dit de meest leesbare variant is en het best is opgewassen tegen afkortingen.</p></div><p></p>
+                            <p>Veel variabelen hebben namen met meerdere woorden. In normaal Nederlands plaatsen we spaties tussen de woorden, maar white spaces zijn niet toegestaan. Om de verschillende woorden in één naam toch te kunnen onderscheiden kun je kiezen voor verschillende gevallen van <em>casing</em>:</p>
+                            <ul>
+                                <li><p><code>snake_case</code>: alle woorden zijn klein geschreven en worden door underscores gescheiden;</p></li>
+                                <li><p><code>period.separated</code>: woorden worden scheiden door punten;</p></li>
+                                <li><p><code>camelCase</code>: het eerste woord is klein geschreven, de volgende woorden beginnen met een hoofdletter;</p></li>
+                                <li><p><code>PascalCase</code>: ieder woord begint met een hoofdletter.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="assignment-operatoren" class="section level2">
+                        <h2>Assignment operatoren</h2>
+                        <p>Er zijn drie operatoren die je kunt gebruiken in R:</p>
+                        <ul>
+                            <li><p><code>&lt;-</code>: de meest gebruikte assignment operator binnen R. Om jouw code vergelijkbaar te maken met die van de rest van de R community raden we heel sterk aan deze te ook daadwerkelijk te gebruiken. Het pijltje kun je in RStudio ook vinden onder de shortcut <code>alt -</code> (Linux/Windows) of <code>option -</code> (Mac).</p></li>
+                            <li><p><code>-&gt;</code> Het pijltje kan ook de andere kant op wijzen. Mocht je het willen gebruiken moet je wel rekening houden dat de volgorde ook andersom is: <code>waarde -&gt; naam</code>. Toch raden we heel sterk af deze te gebruiken. Deze wordt zelden gebruikt en maakt de code vreselijk verwarrend.</p></li>
+                            <li><p><code>=</code>: globaal de meest gebruikte assignment operator. Wordt gebruikt in Python, PHP, java, C, C++, C# etc. Maar gebruik toch maar gewoon het pijltje naar links.</p></li>
+                        </ul>
+                    </div>
+                    <div id="tldr" class="section level2">
+                        <h2>tl;dr</h2>
+                        <p>Het kan heel kort: <code>x &lt;- 10</code>. Let op je casing.</p>
+                    </div>
+                </div>
+                <section>
+                    <h1>Lorem ipsum dolor</h1>
+                    <p>Sit amet, consectetur adipiscing elit. Integer volutpat ligula id justo maximus, sit amet tempus ligula semper. In ligula eros, imperdiet sed auctor quis, consequat vitae massa. Nulla porta gravida nisi, ac vestibulum nisl. Aenean semper libero risus, vitae fringilla felis feugiat at. Donec congue consectetur venenatis. Sed quis rhoncus ipsum, at semper dui. Mauris sit amet finibus metus. Fusce vel volutpat mauris. Curabitur tincidunt egestas enim quis pretium. Donec neque erat, luctus non vestibulum vel, cursus vel tortor. Duis interdum turpis in faucibus egestas.</p>
+                    <h2>Cras malesuada congue nulla</h2>
+                    <p>Nullam lectus purus, posuere vitae nisi nec, sodales efficitur arcu. Fusce et enim eget justo gravida volutpat a a est. Sed nunc ipsum, porttitor sit amet commodo vitae, pretium eu elit. Nulla auctor, erat sit amet porttitor interdum, mauris felis convallis leo, vitae mollis ipsum ante in tortor. Nam non rutrum enim. Vivamus ullamcorper, quam sed posuere eleifend, turpis tortor gravida sem, et blandit tortor nulla sit amet ligula. Nulla mollis odio erat, eu luctus purus eleifend vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lacus mi. Aenean dui nisi, dictum quis feugiat vel, maximus at velit. Sed vel libero malesuada, eleifend sem eget, dignissim mi. Morbi vitae pretium nisi. Phasellus tristique feugiat nunc vel imperdiet. Aliquam viverra velit quis diam viverra aliquam. Sed a lectus pretium, dictum dui maximus, fringilla urna.</p>
+                    <h3>Suspendisse nec tincidunt turpis</h3>
+                    <p>Phasellus a ultrices nisi. Sed tempor a neque a tincidunt. Mauris euismod velit purus, nec tempus libero feugiat vitae. Quisque et odio condimentum, vehicula sem et, dictum nunc. Nunc et accumsan leo. Maecenas eleifend massa orci, nec sodales erat dictum et. Nullam nec pretium velit. Aenean convallis fermentum semper. Phasellus sodales leo sem, a consequat felis rutrum quis. Ut mauris purus, rhoncus sit amet sem a, condimentum cursus risus. Phasellus nulla nulla, pharetra id dictum et, interdum at urna. Nulla mauris velit, malesuada ut faucibus non, vulputate vitae massa. Ut at scelerisque mauris, at ullamcorper nisi.</p>
+                    <h2>Cras malesuada congue nulla</h2>
+                    <p>Nullam lectus purus, posuere vitae nisi nec, sodales efficitur arcu. Fusce et enim eget justo gravida volutpat a a est. Sed nunc ipsum, porttitor sit amet commodo vitae, pretium eu elit. Nulla auctor, erat sit amet porttitor interdum, mauris felis convallis leo, vitae mollis ipsum ante in tortor. Nam non rutrum enim. Vivamus ullamcorper, quam sed posuere eleifend, turpis tortor gravida sem, et blandit tortor nulla sit amet ligula. Nulla mollis odio erat, eu luctus purus eleifend vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lacus mi. Aenean dui nisi, dictum quis feugiat vel, maximus at velit. Sed vel libero malesuada, eleifend sem eget, dignissim mi. Morbi vitae pretium nisi. Phasellus tristique feugiat nunc vel imperdiet. Aliquam viverra velit quis diam viverra aliquam. Sed a lectus pretium, dictum dui maximus, fringilla urna.</p>
+                    <h2>Vivamus euismod venenatis purus</h2>
+                    <p>Eget facilisis odio mollis id. Donec non porttitor eros. Suspendisse viverra aliquam convallis. Morbi eget dignissim nibh. Pellentesque et augue massa. Curabitur gravida leo erat, id ultrices nulla fringilla sit amet. Nam tincidunt tincidunt turpis, id molestie tortor convallis ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ac vehicula dui. Integer mattis rhoncus est, sit amet maximus risus convallis nec. Nulla convallis mi in facilisis dapibus. Pellentesque rutrum scelerisque posuere. Curabitur mattis consequat enim, et ullamcorper sem. Vivamus elementum viverra turpis.</p>
+                    <p>Sed finibus ante et libero consectetur interdum. Proin faucibus, massa nec pretium fringilla, ante turpis volutpat urna, vitae varius massa arcu ut turpis. Sed ultricies leo eu ante placerat, sed imperdiet ipsum laoreet. Cras lacinia pretium ex, sed viverra neque semper vel. Cras et bibendum risus. Cras dignissim aliquet sem, et tincidunt velit pretium a. Nullam ut facilisis neque. Donec diam orci, convallis ac faucibus sed, iaculis at arcu. Duis condimentum mattis mattis. Vestibulum in odio lacinia, ultricies justo a, hendrerit nisi. Fusce eu risus ac turpis cursus lacinia nec id metus. Pellentesque auctor fermentum blandit. Nulla eget luctus dolor, ut scelerisque libero. Nunc ut quam tincidunt, tristique nibh non, vestibulum arcu. Sed non dolor aliquet, efficitur nibh ac, pretium metus.</p>
+                    <h1>Lorem ipsum dolor</h1>
+                    <p>Sit amet, consectetur adipiscing elit. Integer volutpat ligula id justo maximus, sit amet tempus ligula semper. In ligula eros, imperdiet sed auctor quis, consequat vitae massa. Nulla porta gravida nisi, ac vestibulum nisl. Aenean semper libero risus, vitae fringilla felis feugiat at. Donec congue consectetur venenatis. Sed quis rhoncus ipsum, at semper dui. Mauris sit amet finibus metus. Fusce vel volutpat mauris. Curabitur tincidunt egestas enim quis pretium. Donec neque erat, luctus non vestibulum vel, cursus vel tortor. Duis interdum turpis in faucibus egestas.</p>
+                    <h2>Cras malesuada congue nulla</h2>
+                    <p>Nullam lectus purus, posuere vitae nisi nec, sodales efficitur arcu. Fusce et enim eget justo gravida volutpat a a est. Sed nunc ipsum, porttitor sit amet commodo vitae, pretium eu elit. Nulla auctor, erat sit amet porttitor interdum, mauris felis convallis leo, vitae mollis ipsum ante in tortor. Nam non rutrum enim. Vivamus ullamcorper, quam sed posuere eleifend, turpis tortor gravida sem, et blandit tortor nulla sit amet ligula. Nulla mollis odio erat, eu luctus purus eleifend vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lacus mi. Aenean dui nisi, dictum quis feugiat vel, maximus at velit. Sed vel libero malesuada, eleifend sem eget, dignissim mi. Morbi vitae pretium nisi. Phasellus tristique feugiat nunc vel imperdiet. Aliquam viverra velit quis diam viverra aliquam. Sed a lectus pretium, dictum dui maximus, fringilla urna.</p>
+                    <h3>Suspendisse nec tincidunt turpis</h3>
+                    <p>Phasellus a ultrices nisi. Sed tempor a neque a tincidunt. Mauris euismod velit purus, nec tempus libero feugiat vitae. Quisque et odio condimentum, vehicula sem et, dictum nunc. Nunc et accumsan leo. Maecenas eleifend massa orci, nec sodales erat dictum et. Nullam nec pretium velit. Aenean convallis fermentum semper. Phasellus sodales leo sem, a consequat felis rutrum quis. Ut mauris purus, rhoncus sit amet sem a, condimentum cursus risus. Phasellus nulla nulla, pharetra id dictum et, interdum at urna. Nulla mauris velit, malesuada ut faucibus non, vulputate vitae massa. Ut at scelerisque mauris, at ullamcorper nisi.</p>
+                    <h2>Cras malesuada congue nulla</h2>
+                    <p>Nullam lectus purus, posuere vitae nisi nec, sodales efficitur arcu. Fusce et enim eget justo gravida volutpat a a est. Sed nunc ipsum, porttitor sit amet commodo vitae, pretium eu elit. Nulla auctor, erat sit amet porttitor interdum, mauris felis convallis leo, vitae mollis ipsum ante in tortor. Nam non rutrum enim. Vivamus ullamcorper, quam sed posuere eleifend, turpis tortor gravida sem, et blandit tortor nulla sit amet ligula. Nulla mollis odio erat, eu luctus purus eleifend vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut lacus mi. Aenean dui nisi, dictum quis feugiat vel, maximus at velit. Sed vel libero malesuada, eleifend sem eget, dignissim mi. Morbi vitae pretium nisi. Phasellus tristique feugiat nunc vel imperdiet. Aliquam viverra velit quis diam viverra aliquam. Sed a lectus pretium, dictum dui maximus, fringilla urna.</p>
+                    <h2>Vivamus euismod venenatis purus</h2>
+                    <p>Eget facilisis odio mollis id. Donec non porttitor eros. Suspendisse viverra aliquam convallis. Morbi eget dignissim nibh. Pellentesque et augue massa. Curabitur gravida leo erat, id ultrices nulla fringilla sit amet. Nam tincidunt tincidunt turpis, id molestie tortor convallis ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ac vehicula dui. Integer mattis rhoncus est, sit amet maximus risus convallis nec. Nulla convallis mi in facilisis dapibus. Pellentesque rutrum scelerisque posuere. Curabitur mattis consequat enim, et ullamcorper sem. Vivamus elementum viverra turpis.</p>
+                    <p>Sed finibus ante et libero consectetur interdum. Proin faucibus, massa nec pretium fringilla, ante turpis volutpat urna, vitae varius massa arcu ut turpis. Sed ultricies leo eu ante placerat, sed imperdiet ipsum laoreet. Cras lacinia pretium ex, sed viverra neque semper vel. Cras et bibendum risus. Cras dignissim aliquet sem, et tincidunt velit pretium a. Nullam ut facilisis neque. Donec diam orci, convallis ac faucibus sed, iaculis at arcu. Duis condimentum mattis mattis. Vestibulum in odio lacinia, ultricies justo a, hendrerit nisi. Fusce eu risus ac turpis cursus lacinia nec id metus. Pellentesque auctor fermentum blandit. Nulla eget luctus dolor, ut scelerisque libero. Nunc ut quam tincidunt, tristique nibh non, vestibulum arcu. Sed non dolor aliquet, efficitur nibh ac, pretium metus.</p>
+                </section>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-outer"></div>
+            </div>
+
+        </div>
+    </body>
+
+</html>

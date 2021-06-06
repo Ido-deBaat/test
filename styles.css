@@ -1,0 +1,193 @@
+@import url("https://use.typekit.net/kzz3rpw.css");
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,700;1,200;1,300;1,700&family=Roboto+Mono:wght@200&display=swap');
+
+html, .root {font-size: 16px; line-height: 24px; height: 100%}
+
+:root[color-mode:light] {
+    --surface1: #ffffff;
+    --surface2: #f0f0f0;
+    --surface3: #dddddd;
+    --prim-col: #4939f3;
+
+}
+
+/*html {background-color: #161825;}*/
+
+body, .article {
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #161825;
+    /*    color: #e2e2f7;*/
+    height: 100%;
+        background-color: #f0f0f0;
+}
+
+div, pre {box-sizing: border-box;}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--prim-col, #161825);
+    font-family: 'Proxima-nova', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.page-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.content-container {
+    height: calc(100% - 4em);
+    /*    padding-bottom: 2em;*/
+    overflow-y: scroll;
+}
+
+.menu-container {
+    height: 4em;
+    padding: .5em;
+    width: 100%;
+    border-top: .5px solid #4939f3;
+
+}
+
+.menu-outer {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 2px;
+    box-shadow: 
+        0 0 1px 0 rgba(22, 24, 37, 0.1),
+        0 1px .5em 1px rgba(22, 24, 37, 0.3);
+}
+
+.title-wrapper {
+    height: 110%;
+    margin-top: -5%;
+    width: 100%;
+    background-color: #4939f3;
+}
+
+div.sourceCode {}
+
+pre.sourceCode, pre:not(.sourceCode) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    white-space: pre; 
+    overflow: auto;
+
+    border-left: 4px solid #4939f3;
+    border-radius: 2px;
+    box-shadow: 
+        0 0 1px 0 rgba(22, 24, 37, 0.08),
+        0 1px .5em 1px rgba(22, 24, 37, 0.2);
+}
+
+pre:not(.sourceCode) {
+    color: #8b8b8b;
+}
+
+
+code {
+    padding-left: .25em;
+    padding-right: .25em;
+    padding-bottom: .125em;
+    border-radius: .125em;
+    background-color: #f0f0f0;
+}
+
+pre > code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+pre {
+    white-space: pre; 
+    overflow: auto;
+}
+
+pre, code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+li {
+    margin-left: 0;
+    margin-right: 0;
+/*    padding: 50px;*/
+}
+
+li > p {
+    margin-left: 0;
+}
+
+p.intro {
+    font-weight: 300;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #4939f3;
+}
+h1, .h1 {
+    font-size: 3.375em;
+    line-height: 1.33333333em;
+    margin-top: 1.33333332em;
+    margin-bottom: 0.88888888em;
+}
+h2, .h2 {
+    font-size: 2.25em;
+    line-height: 1.33333333em;
+    margin-top: 1.33333334em;
+    margin-bottom: 0.66666667em;
+}
+h3, .h3 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+h4, .h4 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+}
+h5, .h5 {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0em;
+}
+p, ul, ol, pre, table, blockquote {
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+}
+ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+/* Let's make sure all's aligned */
+hr, .hr {
+    border: 1px solid;
+    margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+    line-height: 0;
+}
+sub, sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
