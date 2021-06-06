@@ -22,12 +22,13 @@ body, .article {
     background-color: #f0f0f0;
     
     --menu-height: 16em;
+    --prim-col: #4939f3;
 }
 
 div, pre {box-sizing: border-box;}
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--prim-col, #161825);
+    color: var(--prim-col, red;
     font-family: 'Proxima-nova', sans-serif;
 }
 
