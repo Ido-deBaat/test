@@ -24,7 +24,7 @@ body, .article {
     
     --menu-height: 4;
     --prim-col: #4939f3;
-    --menuButtonSize: 44;
+    --menuButtonSize: 32;
     --menuButtonHeight:44;
 }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
     
 /*    border: 1px solid #4939f3;*/
     border-radius: 50%;
-    background-color: #4939f3;
+    background-color: white;
     
 }
 
