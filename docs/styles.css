@@ -21,10 +21,10 @@ body, .article {
     line-height: 1.5em;
     color: #161825;
     background-color: #f0f0f0;
-    
+
     --menu-height: 4;
     --prim-col: #4939f3;
-    --menuButtonSize: 32;
+    --menuButtonSize: 40;
     --menuButtonHeight:44;
 }
 
@@ -53,18 +53,18 @@ h1, h2, h3, h4, h5, h6, p, pre {
 
 /*
 .menu-container {
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    height: 4em;
-    height: calc(var(--menu-height, 4) * 1em);
-    padding: .5em;
-    
-    
-    padding-bottom: calc(env(safe-area-inset-bottom) + 5em);
-    width: 100%;
-    border-top: .5px solid #4939f3;
-    background-color: #eeeeee;
+position: fixed;
+overflow: hidden;
+bottom: 0;
+height: 4em;
+height: calc(var(--menu-height, 4) * 1em);
+padding: .5em;
+
+
+padding-bottom: calc(env(safe-area-inset-bottom) + 5em);
+width: 100%;
+border-top: .5px solid #4939f3;
+background-color: #eeeeee;
 }
 */
 
@@ -78,11 +78,17 @@ h1, h2, h3, h4, h5, h6, p, pre {
     );
     left: 50%;
     margin-left: calc((var(--menuButtonSize) * -1px) / 2);
-    
-/*    border: 1px solid #4939f3;*/
+
+    border: 1px solid #8b8b8b;
     border-radius: 50%;
-    background-color: white;
-    
+    background-color: rgba(240, 240, 240, 0.9);
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    box-shadow: 
+        0 0 1px 0 rgba(22, 24, 37, 0.1),
+        0 1px .5em 1px rgba(22, 24, 37, 0.3);
+
 }
 
 .menu-outer {
