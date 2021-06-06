@@ -22,14 +22,14 @@ body, .article {
     color: #161825;
     background-color: #f0f0f0;
     
-    --menu-height: 4em;
+    --menu-height: 4;
     --prim-col: #4939f3;
 }
 
 div, pre {box-sizing: border-box;}
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--prim-col, #161825);
+    color: #161825;
     font-family: 'Proxima-nova', sans-serif;
 }
 
@@ -40,23 +40,32 @@ h1, h2, h3, h4, h5, h6, p, pre {
 
 .page-container {height: 100%;}
 
-.content-container {
-    height: 100%;
-    margin-bottom: 4em;
-    margin-bottom: var(--menu-height, 4em);
-}
+.content-container {height: 100%;}
 
 .menu-container {
     position: fixed;
     overflow: hidden;
     bottom: 0;
     height: 4em;
-    height: var(--menu-height, 4em);
+    height: calc(var(--menu-height, 4) * 1em);
     padding: .5em;
     width: 100%;
     border-top: .5px solid #4939f3;
     background-color: #eeeeee;
+}
 
+.content-container > *:last-child::after {
+    content: "test";
+    display: block;
+    height: calc(var(--menu-height, 4) * 1em);
+    background-color: transparent;
+}
+
+.content-spacer {
+    height: calc(var(--menu-height, 4) * 1em);
+/*    height: 180px;*/
+    width: 100%;
+    background-color: fuchsia;
 }
 
 .menu-outer {
@@ -71,7 +80,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
 }
 
 .title-wrapper {
-    height: calc(100% - var(--menu-height, 4em) + 1em);
+    height: calc(100% - (var(--menu-height, 4em) * 1em) + 1em);
     margin-top: -0.5em;
     width: 100%;
     background-color: #4939f3;
@@ -130,7 +139,6 @@ li {
 li > p {
     margin-left: 0;
 }
-
 p.intro {
     font-weight: 300;
     margin-top: 2em;
@@ -175,7 +183,6 @@ ul ul, ol ol, ul ol, ol ul {
     margin-top: 0em;
     margin-bottom: 0em;
 }
-
 /* Let's make sure all's aligned */
 hr, .hr {
     border: 1px solid;
