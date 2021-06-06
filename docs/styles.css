@@ -21,7 +21,7 @@ body, .article {
     color: #161825;
     background-color: #f0f0f0;
     
-    --menu-height: 6em;
+    --menu-height: 16em;
 }
 
 div, pre {box-sizing: border-box;}
