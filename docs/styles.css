@@ -25,7 +25,7 @@ body, .article {
     --menu-height: 4;
     --prim-col: #4939f3;
     --menuButtonSize: 44;
-    --menuButtonHeight:48;
+    --menuButtonHeight:56;
 }
 
 div, pre {box-sizing: border-box;}
