@@ -25,6 +25,7 @@ body, .article {
     --menu-height: 4;
     --prim-col: #4939f3;
     --menuButtonSize: 44;
+    --menuButtonHeight:44;
 }
 
 div, pre {box-sizing: border-box;}
@@ -72,7 +73,7 @@ h1, h2, h3, h4, h5, h6, p, pre {
     position: fixed;
     height: calc(var(--menuButtonSize) * 1px);
     width: calc(var(--menuButtonSize) * 1px);
-    bottom: 32px;
+    bottom: calc(var(--menuButtonHeight) * 1px);
     left: 50%;
     margin-left: calc((var(--menuButtonSize) * -1px) / 2);
     
