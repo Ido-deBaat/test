@@ -37,21 +37,25 @@ h1, h2, h3, h4, h5, h6, p, pre {
 }
 
 .page-container {
-    height: 100%;
-    overflow: hidden;
+/*    height: 100%;*/
+/*    overflow: hidden;*/
 }
 
 .content-container {
-    height: calc(100% - 4em);
+/*    height: calc(100% - 4em);*/
     /*    padding-bottom: 2em;*/
-    overflow-y: scroll;
+/*    overflow-y: scroll;*/
+    padding-bottom: 4em;
 }
 
 .menu-container {
+    position: fixed;
+    bottom: 0;
     height: 4em;
     padding: .5em;
     width: 100%;
     border-top: .5px solid #4939f3;
+    background-color: #eeeeee;
 
 }
 
