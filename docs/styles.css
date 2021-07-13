@@ -24,7 +24,7 @@ body, .article {
     font-size: 1em;
     line-height: 1.5em;
     color: #161825;
-    background-color: var(--surface1, #f0f0f0);
+    background-color: var(--surface2, #f0f0f0);
     --menu-height: 4;
     --menuButtonHeight:44;
 }
@@ -260,9 +260,11 @@ sub {
 /*    margin-left: 12px;*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: calc(((var(--menu-height, 4) * 1em) - 24px - 16px) / 2);
+    margin-bottom: calc(((var(--menu-height, 4) * 1em) - 24px - 16px) / 2);
+    bottom: calc(((var(--menu-height, 4) * 1em) - 24px - 16px) / 2);
+    left: 50%;
 /*    margin-top: 4px;*/
-/*    position: absolute;*/
+    position: absolute;
 /*    left: 0;*/
 /*    top: 50%;*/
 /*    transform: translateY(-50%);*/
