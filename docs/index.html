@@ -6,12 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="menuScroll.js"></script>
+        <script src="menu_expand.js"></script>
     </head>
     <body>
         <div class="page-container">
-
-            <header class="nav-down">
-                <div class="menu-outer"></div>
+            
+            <header id="menu" class="nav-up">
+                <div id="menu-bar" class="menu-outer">
+                    <div class="navTrigger" id="menu_close"><i></i><i></i><i></i></div>
+                    <div class="menu-inner"></div>
+                </div>
             </header>
 
             <div class="content-container">
