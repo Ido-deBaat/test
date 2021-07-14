@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2, h3, h4, h5, h6, p, pre {
     margin-left: calc(16px + env(safe-area-inset-left));
-    margin-left: calc(16px + env(safe-area-inset-right));
+    margin-right: calc(16px + env(safe-area-inset-right));
 }
 
 .page-container {height: 100%;}
