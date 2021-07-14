@@ -17,7 +17,8 @@ setInterval(function() {
 
 function heads_up() {$('header').removeClass('nav-down').addClass('nav-up');};
 
-function heads_down() {$('header').removeClass('nav-up').addClass('nav-down');};
+function heads_down() {
+    $('header').removeClass('nav-up').addClass('nav-down');};
 
 function set_scroll_dir() {
 
@@ -26,7 +27,7 @@ function set_scroll_dir() {
     if (Math.abs(st_current - st_last) >= scroll_delta) {
 
         if (st_current > st_last && scroll_direction != 'down' &&
-            st_current > 0) {
+            st_current > 0 && !$('header').hasClass('expand')) {
 
             heads_down();
 
@@ -41,3 +42,5 @@ function set_scroll_dir() {
     st_last = st_current;
 
 };
+
+$('header').hasClass

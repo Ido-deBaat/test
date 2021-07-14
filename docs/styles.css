@@ -18,15 +18,18 @@ body, .article {
     --surface3: #dddddd;
     --prim-col: #4939f3;
 
+    --menu-height: 5;
+    --menu-trigger-height: 24px;
+    --menu-padding: 8px;
+    --menu-inner-heigt: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
+
     height: 100%;
     margin: 0;
     font-family: 'Mulish', sans-serif;
     font-size: 1em;
     line-height: 1.5em;
     color: #161825;
-    background-color: var(--surface2, #f0f0f0);
-    --menu-height: 4;
-    --menuButtonHeight:44;
+    background-color: var(--surface1, #f0f0f0);
 }
 
 div, pre {box-sizing: border-box;}
@@ -94,19 +97,53 @@ box-shadow:
 
 header {
     box-sizing: border-box;
-    padding: 8px;
-    width: 100%;
-    background-color: #fff;
-    background-color: var(--surface1, #fff);
     position: fixed;
     bottom: 0;
+    width: 100%;
+    height: 4em;
     height: calc(var(--menu-height, 4) * 1em);
-/*    border-top: 1px solid var(--surface2, #f0f0f0);*/
-    border-top: 1px solid #ddd;
+    padding: var(--menu-padding, 8px);
+    
+    background-color: #fff;
+    background-color: var(--surface1, #fff);
+    
+    transition: 
+        height 0.25s ease-out,
+        bottom 0.2s ease-out; /* for nav-up animation */
 }
 
 header.expand {
     height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-outer {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--surface1);
+    box-shadow: 
+        0 0 1px 0 rgba(22, 24, 37, 0.1),
+        0 1px .5em 1px rgba(22, 24, 37, 0.3);
+    transition: all 0.25s ease-in-out;
+}
+
+.menu-outer.expand {
+    background-color: #161825;
+    box-shadow: 
+        0 0 4px 0 rgba(22, 24, 37, 0.1),
+        0 4px .5em 1px rgba(22, 24, 37, 0.3);
+}
+
+.menu-inner {
+    height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
+    transition: margin-top .5s ease-in;
+    
+}
+
+.menu-inner.expand {
+    transition: margin-top .5s ease-in-out .25s;
 }
 
 .nav-down {
@@ -118,19 +155,6 @@ header.expand {
 .nav-up {
     opacity: 100;
     bottom: 0;
-    transition: bottom 0.2s ease-out;
-}
-
-.menu-outer {
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background-color: var(--surface1);
-/*    border-radius: 2px;*/
-    box-shadow: 
-        0 0 1px 0 rgba(22, 24, 37, 0.1),
-        0 1px .5em 1px rgba(22, 24, 37, 0.3);
 }
 
 .title-wrapper {
@@ -257,16 +281,11 @@ sub {
 .navTrigger {
     cursor: pointer;
     width: 24px;
-/*    margin-left: 12px;*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: calc(((var(--menu-height, 4) * 1em) - 24px - 16px) / 2);
-    bottom: calc(((var(--menu-height, 4) * 1em) - 24px - 16px) / 2);
+    width: var(--menu-trigger-height, 24px);
+    bottom: 20px;
+    bottom: calc(((var(--menu-height, 4) * 1em) - var(--menu-trigger-heigt, 24px)) / 2);
     left: 50%;
-/*    margin-top: 4px;*/
     position: absolute;
-/*    left: 0;*/
-/*    top: 50%;*/
     transform: translateX(-50%);
 }
 
