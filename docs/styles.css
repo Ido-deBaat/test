@@ -18,10 +18,9 @@ body, .article {
     --surface3: #dddddd;
     --prim-col: #4939f3;
 
-    --menu-height: 5;
+    --menu-height: 4;
     --menu-trigger-height: 24px;
     --menu-padding: 8px;
-    --menu-inner-heigt: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
 
     height: 100%;
     margin: 0;
@@ -40,8 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6, p, pre {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: calc(16px + env(safe-area-inset-left));
+    margin-left: calc(16px + env(safe-area-inset-right));
 }
 
 .page-container {height: 100%;}
@@ -55,46 +54,6 @@ h1, h2, h3, h4, h5, h6, p, pre {
     background-color: transparent;
 }
 
-/*
-.menu-container {
-position: fixed;
-overflow: hidden;
-bottom: 0;
-height: 4em;
-height: calc(var(--menu-height, 4) * 1em);
-padding: .5em;
-
-
-padding-bottom: calc(env(safe-area-inset-bottom) + 5em);
-width: 100%;
-border-top: .5px solid #4939f3;
-background-color: #eeeeee;
-}
-*/
-
-/*
-.menu-container {
-box-sizing: border-box;
-position: fixed;
-height: calc(var(--menuButtonSize) * 1px);
-width: calc(var(--menuButtonSize) * 1px);
-bottom: calc(
-(var(--menuButtonHeight) * 1px) + env(safe-area-inset-bottom)
-);
-left: 50%;
-margin-left: calc((var(--menuButtonSize) * -1px) / 2);
-
-border: 1px solid #ffffff;
-border-radius: 50%;
-background-color: rgba(240, 240, 240, 0.5);
--webkit-backdrop-filter: blur(4px);
-backdrop-filter: blur(4px);
-box-shadow: 
-0 0 1px 0 rgba(22, 24, 37, 0.1),
-0 1px .5em 1px rgba(22, 24, 37, 0.3);
-}
-*/
-
 header {
     box-sizing: border-box;
     position: fixed;
@@ -103,16 +62,17 @@ header {
     height: 4em;
     height: calc(var(--menu-height, 4) * 1em);
     padding: var(--menu-padding, 8px);
-    
     background-color: #fff;
     background-color: var(--surface1, #fff);
-    
+    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--surface2, #f0f0f0);
     transition: 
         height 0.25s ease-out,
         bottom 0.2s ease-out; /* for nav-up animation */
 }
 
 header.expand {
+    border-top: none;
     height: 100%;
     transition: all 0.5s ease-in-out;
 }
@@ -137,6 +97,7 @@ header.expand {
 }
 
 .menu-inner {
+    background-color: rgba(255, 255, 255, 0.05);
     height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
     transition: margin-top .5s ease-in;
     
@@ -213,66 +174,79 @@ li {
 li > p {
     margin-left: 0;
 }
+
 p.intro {
     font-weight: 300;
     margin-top: 2em;
     margin-bottom: 1em;
     color: #4939f3;
 }
+
 h1, .h1 {
     font-size: 3.375em;
     line-height: 1.33333333em;
     margin-top: 1.33333332em;
     margin-bottom: 0.88888888em;
 }
+
 h2, .h2 {
     font-size: 2.25em;
     line-height: 1.33333333em;
     margin-top: 1.33333334em;
     margin-bottom: 0.66666667em;
 }
+
 h3, .h3 {
     font-size: 1.5em;
     line-height: 1em;
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
 h4, .h4 {
     font-size: 1em;
     line-height: 1.5em;
     margin-top: 1.5em;
     margin-bottom: 0em;
 }
+
 h5, .h5 {
     font-size: 1em;
     line-height: 1.5em;
     margin-top: 1.5em;
     margin-bottom: 0em;
 }
+
 p, ul, ol, pre, table, blockquote {
     margin-top: 0em;
     margin-bottom: 1.5em;
 }
+
 ul ul, ol ol, ul ol, ol ul {
     margin-top: 0em;
     margin-bottom: 0em;
 }
+
 /* Let's make sure all's aligned */
 hr, .hr {
     border: 1px solid;
     margin: -1px 0;
 }
+
 a, b, i, strong, em, small, code {
     line-height: 0;
 }
+
 sub, sup {
     line-height: 0;
     position: relative;
     vertical-align: baseline;
 }
+
 sup {
     top: -0.5em;
 }
+
 sub {
     bottom: -0.25em;
 }
