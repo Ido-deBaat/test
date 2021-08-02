@@ -42,5 +42,3 @@ function set_scroll_dir() {
     st_last = st_current;
 
 };
-
-$('header').hasClass

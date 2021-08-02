@@ -19,7 +19,8 @@ body, .article {
     --prim-col: #4939f3;
 
     --menu-height: 4;
-    --menu-trigger-height: 24px;
+    --menu-trigger-width: 24px;
+    --menu-trigger-height: 22px;
     --menu-padding: 8px;
 
     height: 100%;
@@ -90,7 +91,7 @@ header.expand {
 }
 
 .menu-outer.expand {
-    background-color: #161825;
+/*    background-color: #161825;*/
     box-shadow: 
         0 0 4px 0 rgba(22, 24, 37, 0.1),
         0 4px .5em 1px rgba(22, 24, 37, 0.3);
@@ -100,7 +101,7 @@ header.expand {
     background-color: rgba(255, 255, 255, 0.05);
     height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
     transition: margin-top .5s ease-in;
-    
+
 }
 
 .menu-inner.expand {
@@ -133,6 +134,8 @@ pre.sourceCode, pre:not(.sourceCode) {
     overflow: auto;
 
     border-left: 4px solid #4939f3;
+    /*    border-left: 4px solid #8b8b8b;*/
+    /*    background-color: #fbfbfb;*/
     border-radius: 2px;
     box-shadow: 
         0 0 1px 0 rgba(22, 24, 37, 0.08),
@@ -146,9 +149,10 @@ pre:not(.sourceCode) {
 code {
     padding-left: .25em;
     padding-right: .25em;
-    padding-bottom: .125em;
-    border-radius: .125em;
+    padding-bottom: 0.05em;
+    border-radius: 0.125em;
     background-color: #f0f0f0;
+    background-color: var(--surface2, #f0f0f0);
 }
 
 pre > code {
@@ -252,12 +256,16 @@ sub {
 }
 
 
+/* -- menu trigger -- */
+
 .navTrigger {
+    --nt-anim-duration: 0.5s;
+
     cursor: pointer;
     width: 24px;
-    width: var(--menu-trigger-height, 24px);
+    width: var(--menu-trigger-width, 24px);
     bottom: 20px;
-    bottom: calc(((var(--menu-height, 4) * 1em) - var(--menu-trigger-heigt, 24px)) / 2);
+    bottom: calc(((var(--menu-height, 4) * 1em) - var(--menu-trigger-heigt, 22px)) / 2);
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
@@ -266,7 +274,6 @@ sub {
 .navTrigger:hover > i {
     background: #9091C3;
     transition: color 0.1s ease-in;
-    /*    transition: background 0.1s ease-in;*/
 }
 
 .navTrigger i {
@@ -285,40 +292,40 @@ sub {
 }
 
 .navTrigger i:nth-child(1) {
-    -webkit-animation: outT 0.8s backwards;
-    animation: outT 0.8s backwards;
+    -webkit-animation: outT var(--nt-anim-duration) backwards;
+    animation: outT var(--nt-anim-duration) backwards;
     -webkit-animation-direction: reverse;
     animation-direction: reverse;
 }
 
 .navTrigger i:nth-child(2) {
     margin: 5px 0;
-    -webkit-animation: outM 0.8s backwards;
-    animation: outM 0.8s backwards;
+    -webkit-animation: outM var(--nt-anim-duration) backwards;
+    animation: outM var(--nt-anim-duration) backwards;
     -webkit-animation-direction: reverse;
     animation-direction: reverse;
 }
 
 .navTrigger i:nth-child(3) {
-    -webkit-animation: outBtm 0.8s backwards;
-    animation: outBtm 0.8s backwards;
+    -webkit-animation: outBtm var(--nt-anim-duration) backwards;
+    animation: outBtm var(--nt-anim-duration) backwards;
     -webkit-animation-direction: reverse;
     animation-direction: reverse;
 }
 
 .navTrigger.active i:nth-child(1) {
-    -webkit-animation: inT 0.8s forwards;
-    animation: inT 0.8s forwards;
+    -webkit-animation: inT var(--nt-anim-duration) forwards;
+    animation: inT var(--nt-anim-duration) forwards;
 }
 
 .navTrigger.active i:nth-child(2) {
-    -webkit-animation: inM 0.8s forwards;
-    animation: inM 0.8s forwards;
+    -webkit-animation: inM var(--nt-anim-duration) forwards;
+    animation: inM var(--nt-anim-duration) forwards;
 }
 
 .navTrigger.active i:nth-child(3) {
-    -webkit-animation: inBtm 0.8s forwards;
-    animation: inBtm 0.8s forwards;
+    -webkit-animation: inBtm var(--nt-anim-duration) forwards;
+    animation: inBtm var(--nt-anim-duration) forwards;
 }
 
 .navTrigger.active i {
@@ -330,55 +337,128 @@ sub {
     50%{-webkit-transform:rotate(0deg);}
     100%{-webkit-transform:rotate(45deg);}
 }
+
 @keyframes inM{
     50%{transform:rotate(0deg);}
     100%{transform:rotate(45deg);}
 }
+
 @-webkit-keyframes outM{
     50%{-webkit-transform:rotate(0deg);}
     100%{-webkit-transform:rotate(45deg);}
 }
+
 @keyframes outM{
     50%{transform:rotate(0deg);}
     100%{transform:rotate(45deg);}
 }
+
 @-webkit-keyframes inT {
     0%{-webkit-transform: translateY(0px) rotate(0deg);}
     50%{-webkit-transform: translateY(9px) rotate(0deg);}
     100%{-webkit-transform: translateY(9px) rotate(135deg);}
 }
+
 @keyframes inT {
     0%{transform: translateY(0px) rotate(0deg);}
     50%{transform: translateY(9px) rotate(0deg);}
     100%{transform: translateY(9px) rotate(135deg);}
 }
+
 @-webkit-keyframes outT {
     0%{-webkit-transform: translateY(0px) rotate(0deg);}
     50%{-webkit-transform: translateY(9px) rotate(0deg);}
     100%{-webkit-transform: translateY(9px) rotate(135deg);}
 }
+
 @keyframes outT {
     0%{transform: translateY(0px) rotate(0deg);}
     50%{transform: translateY(9px) rotate(0deg);}
     100%{transform: translateY(9px) rotate(135deg);}
 }
+
 @-webkit-keyframes inBtm {
     0%{-webkit-transform: translateY(0px) rotate(0deg);}
     50%{-webkit-transform: translateY(-9px) rotate(0deg);}
     100%{-webkit-transform: translateY(-9px) rotate(135deg);}
 }
+
 @keyframes inBtm {
     0%{transform: translateY(0px) rotate(0deg);}
     50%{transform: translateY(-9px) rotate(0deg);}
     100%{transform: translateY(-9px) rotate(135deg);}
 }
+
 @-webkit-keyframes outBtm {
     0%{-webkit-transform: translateY(0px) rotate(0deg);}
     50%{-webkit-transform: translateY(-9px) rotate(0deg);}
     100%{-webkit-transform: translateY(-9px) rotate(135deg);}
 }
+
 @keyframes outBtm {
     0%{transform: translateY(0px) rotate(0deg);}
     50%{transform: translateY(-9px) rotate(0deg);}
     100%{transform: translateY(-9px) rotate(135deg);}
 }
+
+
+/* -- darkmode trigger -- */
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
+    bottom: calc(((var(--menu-height, 4) * 1em) - var(--menu-trigger-heigt, 22px)) / 2);
+    right: 16px;
+    width: calc(var(--menu-trigger-heigt, 22px) * 1.5);
+    height: 22px;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 1px rgba(22, 24, 37, 0.4);
+    background-color: var(--surface2, #f0f0f0);
+/*    background-color: #f0f0f0;*/
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: calc(var(--menu-trigger-heigt, 22px) - 8px);
+    width: calc((var(--menu-trigger-heigt, 22px) - 8px) / 2);
+    box-shadow: 0 0 2px rgba(22, 24, 37, 0.4);
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--surface1);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+/*    background-color: #2196F3;*/
+}
+
+input:checked + .slider:before {
+/*    -webkit-transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
+/*    -ms-transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
+/*    transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
+    transform: translateX(calc(var(--menu-trigger-heigt, 22px) - 4px));
+}
+
+
+
+
