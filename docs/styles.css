@@ -432,7 +432,7 @@ sub {
     display: inline-block;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(var(--menu-trigger-heigt, 22px) * 1.5);
+    width: calc(var(--menu-trigger-heigt, 22px) * 2);
     height: 22px;
     cursor: pointer;
     background-color: var(--surface2);
