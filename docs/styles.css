@@ -420,28 +420,16 @@ sub {
 }
 
 .switch {
+    overflow: hidden;
     position: relative;
     display: inline-block;
     top: 50%;
-    transform: translatey(-50%);
+    transform: translateY(-50%);
     width: calc(var(--menu-trigger-heigt, 22px) * 1.5);
     height: 22px;
     cursor: pointer;
-    background-color: #161825;
+    background-color: var(--surface2);
 }
-
-/*
-.switch:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    background-color: aqua;
-}
-*/
 
 .switch input {
     opacity: 0;
@@ -473,15 +461,30 @@ transition: .4s;
     box-sizing: border-box;
     width: 50%;
     height: 100%;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.slider > span {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+/*    background-color: var(--surface2);*/
+    background-color: #161825;
 }
 
 .slider:before {
     content: "";
     display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 100%;
     height: 100%;
     width: 100%;
-    background-color: var(--surface2);
+/*    background-color: var(--surface2);*/
+    background-image: url(day.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .slider:after {
@@ -489,10 +492,14 @@ transition: .4s;
     display: inline-block;
     position: absolute;
     top: 0;
-/*    left: 100%;*/
+    left: 100%;
     height: 100%;
     width: 100%;
-    background-color: var(--surface2);
+/*    background-color: var(--surface2);*/
+    background-image: url(night.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 input:checked + .slider {
