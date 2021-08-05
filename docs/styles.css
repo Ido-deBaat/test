@@ -58,24 +58,30 @@ h1, h2, h3, h4, h5, h6, p, pre {
 header {
     box-sizing: border-box;
     position: fixed;
+    padding: 0;
     bottom: 0;
     width: 100%;
     height: 4em;
     height: calc(var(--menu-height, 4) * 1em);
-    padding: var(--menu-padding, 8px);
+    /*    padding: var(--menu-padding, 8px);*/
     background-color: #fff;
     background-color: var(--surface1, #fff);
     border-top: 1px solid #f0f0f0;
     border-top: 1px solid var(--surface2, #f0f0f0);
     transition: 
-        height 0.25s ease-out,
+        all 0.25s ease-in-out,
+        height 0.25s ease-out 0.25s,
+        padding 0.25s ease-in-out 0.5s,
         bottom 0.2s ease-out; /* for nav-up animation */
 }
 
 header.expand {
+    padding: var(--menu-padding, 8px);
     border-top: none;
     height: 100%;
-    transition: all 0.5s ease-in-out;
+    transition: 
+        height 0.5s ease-in-out,
+        padding 0.1s ease-out 0.65s;
 }
 
 .menu-outer {
@@ -84,17 +90,15 @@ header.expand {
     width: 100%;
     overflow: hidden;
     background-color: var(--surface1);
-    box-shadow: 
-        0 0 1px 0 rgba(22, 24, 37, 0.1),
-        0 1px .5em 1px rgba(22, 24, 37, 0.3);
-    transition: all 0.25s ease-in-out;
+    transition: 
+        box-shadow 0.25s ease-in-out;
 }
 
 .menu-outer.expand {
-/*    background-color: #161825;*/
     box-shadow: 
         0 0 4px 0 rgba(22, 24, 37, 0.1),
         0 4px .5em 1px rgba(22, 24, 37, 0.3);
+    transition: box-shadow 0.25s ease-in 0.5s;
 }
 
 .menu-inner {
@@ -404,16 +408,40 @@ sub {
 
 /* -- darkmode trigger -- */
 
-.switch {
+.menu-tools {
     position: absolute;
+    width: 150px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+    height: calc((var(--menu-height, 4) * 1em) - (var(--menu-padding, 8px) * 2));
+    bottom: var(--menu-padding, 8px);
+    right: var(--menu-padding, 8px);
+}
+
+.switch {
+    position: relative;
     display: inline-block;
-    bottom: 20px;
-    bottom: calc(((var(--menu-height, 4) * 1em) - var(--menu-trigger-heigt, 22px)) / 2);
-    right: 16px;
+    top: 50%;
+    transform: translatey(-50%);
     width: calc(var(--menu-trigger-heigt, 22px) * 1.5);
     height: 22px;
     cursor: pointer;
+    background-color: #161825;
 }
+
+/*
+.switch:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+*/
 
 .switch input {
     opacity: 0;
@@ -421,42 +449,54 @@ sub {
     height: 0;
 }
 
+/*
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+box-shadow: inset 0 0 1px rgba(22, 24, 37, 0.4);
+background-color: var(--surface2, #f0f0f0);
+background-color: #f0f0f0;
+-webkit-transition: .4s;
+transition: .4s;
+}
+*/
+
 .slider {
     position: absolute;
-    cursor: pointer;
-    top: 0;
+    display: inline-block;
     left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 1px rgba(22, 24, 37, 0.4);
-    background-color: var(--surface2, #f0f0f0);
-/*    background-color: #f0f0f0;*/
-    -webkit-transition: .4s;
-    transition: .4s;
+    padding: 2px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    transition: all 0.1s ease-in-out;
 }
 
 .slider:before {
-    position: absolute;
     content: "";
-    height: calc(var(--menu-trigger-heigt, 22px) - 8px);
-    width: calc((var(--menu-trigger-heigt, 22px) - 8px) / 2);
-    box-shadow: 0 0 2px rgba(22, 24, 37, 0.4);
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--surface1);
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: var(--surface2);
+}
+
+.slider:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+/*    left: 100%;*/
+    height: 100%;
+    width: 100%;
+    background-color: var(--surface2);
 }
 
 input:checked + .slider {
-/*    background-color: #2196F3;*/
-}
-
-input:checked + .slider:before {
-/*    -webkit-transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
-/*    -ms-transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
-/*    transform: translateX(calc(32px - var(--menu-trigger-heigt, 22px)));*/
-    transform: translateX(calc(var(--menu-trigger-heigt, 22px) - 4px));
+    transform: translateX(100%);
 }
 
 
