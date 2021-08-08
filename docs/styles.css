@@ -3,20 +3,33 @@
 
 html, .root {font-size: 16px; line-height: 24px; height: 100%}
 
-:root[color-mode:light] {
+:root[color-mode="light"] {
     --surface1: #ffffff;
     --surface2: #f0f0f0;
     --surface3: #dddddd;
     --prim-col: #4939f3;
 }
 
-/*html {background-color: #161825;}*/
+:root[color-mode="dark"] {
+  --surface1: #161825;
+  --surface2: #333333;
+  --surface3: #404040;
+  --element1: #eeeeee;
+  --element2: #dddddd;
+  --element3: #cccccc;
+  --elementInverse: #111;
+  --primary: #8fceff;
+  --secondary: #72faca;
+  --tertiary: #eee8a9;
+}
 
 body, .article {
+/*
     --surface1: #ffffff;
     --surface2: #f0f0f0;
     --surface3: #dddddd;
     --prim-col: #4939f3;
+*/
 
     --menu-height: 4;
     --menu-trigger-width: 24px;
@@ -29,7 +42,7 @@ body, .article {
     font-size: 1em;
     line-height: 1.5em;
     color: #161825;
-    background-color: var(--surface1, #f0f0f0);
+    background-color: var(--surface1, red);
 }
 
 div, pre {box-sizing: border-box;}
@@ -90,8 +103,7 @@ header.expand {
     width: 100%;
     overflow: hidden;
     background-color: var(--surface1);
-    transition: 
-        box-shadow 0.25s ease-in-out;
+    transition: box-shadow 0.25s ease-in-out;
 }
 
 .menu-outer.expand {
@@ -102,14 +114,22 @@ header.expand {
 }
 
 .menu-inner {
-    background-color: rgba(255, 255, 255, 0.05);
     height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
-    transition: margin-top .5s ease-in;
+    opacity: 0;
+    padding-top: 100px;
+    transition: 
+        opacity 0.25s ease-in-out,
+        padding-top 0.5s ease-in;
+    background-color: var(--surface2);
 
 }
 
 .menu-inner.expand {
-    transition: margin-top .5s ease-in-out .25s;
+    opacity: 1;
+    padding -top: 0;
+    transition: 
+        opacity 0.5s ease-out 0.75s,
+        padding-top 0.5s ease-in-out 0.5s;
 }
 
 .nav-down {
@@ -234,8 +254,6 @@ ul ul, ol ol, ul ol, ol ul {
     margin-top: 0em;
     margin-bottom: 0em;
 }
-
-/* Let's make sure all's aligned */
 hr, .hr {
     border: 1px solid;
     margin: -1px 0;
@@ -436,7 +454,8 @@ sub {
     height: 22px;
     border-radius: 11px;
     cursor: pointer;
-    background-color: var(--surface2);
+    background-color: #dddddd;
+/*    background-color: var(--surface2);*/
 }
 
 .switch input {
@@ -444,22 +463,6 @@ sub {
     width: 0;
     height: 0;
 }
-
-/*
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-box-shadow: inset 0 0 1px rgba(22, 24, 37, 0.4);
-background-color: var(--surface2, #f0f0f0);
-background-color: #f0f0f0;
--webkit-transition: .4s;
-transition: .4s;
-}
-*/
 
 .slider {
     position: absolute;
@@ -469,27 +472,19 @@ transition: .4s;
     box-sizing: border-box;
     width: 50%;
     height: 100%;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-out;
 }
 
 .slider > span {
     display: inline-block;
     height: 100%;
     width: 100%;
-/*    background-color: var(--surface2);*/
     background-color: #161825;
     border-radius: 20px;
 }
 
-.slider:before {
-    right: 100%;
-    background-image: url(day.svg);
-    background-position: 0px 20px;
-}
-
-.slider:after {
-    left: 100%;
-    background-image: url(night.svg);
+input:checked + .slider {
+    transform: translateX(100%);
 }
 
 .slider:after, .slider:before {
@@ -501,20 +496,33 @@ transition: .4s;
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: background-position 0.2s ease-out 0.3s;
+    transition: 
+        background-position 0.2s ease-out 0.3s,
+        opacity 0.5s 0.25s;
 }
 
-input:checked + .slider {
-    transform: translateX(100%);
+.slider:before {
+    right: 100%;
+    background-image: url(day.svg);
+    background-position: 0px 20px;
+    opacity: 0;
+}
+
+.slider:after {
+    left: 100%;
+    background-image: url(night.svg);
+    background-position: center;
+    opacity: 1;
 }
 
 input:checked + .slider:before {
     background-position: center;
-    transition: background-position 0.2s ease-out 0.3s;
+    opacity: 1;
 }
+
 input:checked + .slider:after {
     background-position: 0 -20px;
-    transition: background-position 0.2s ease-out 0.3s;
+    opacity: 0;
 }
 
 
