@@ -5,18 +5,17 @@ html, .root {font-size: 16px; line-height: 24px; height: 100%}
 
 div, pre {box-sizing: border-box;}
 
-:root[color-mode="light"] {
-    /*
-    --surface1: #ffffff;
-    --surface2: #f0f0f0;
-    --surface3: #dddddd;
-    --prim-col: #4939f3;
-    */
+:root {
+    transition: background 0.5s ease-in-out,
+        color 0.5s ease;
+}
 
+:root[color-mode="light"] {
     --background: #ffffff;
     --sur1: #f0f0f0;
     --sur1b: #ffffff;
     --sur2: #e6e6e6;
+    --sur2b: #ffffff;
     --sur_acc: #e6e6e6;
 /*    --sur_acc: #c8c8c8;*/
     --sig1: #4939f3;
@@ -27,6 +26,9 @@ div, pre {box-sizing: border-box;}
     --on_sur: #161825;
     --on_sig1: #ffffff;
     --on_sig2: #ffffff;
+    
+    --shade1: 0 0 1px 0 rgba(22, 24, 37, 0.08),
+        0 1px .5em 1px rgba(22, 24, 37, 0.2);
 
 
 }
@@ -36,8 +38,9 @@ div, pre {box-sizing: border-box;}
     --sur1: #202337;
     --sur1b: #202337;
     --sur2: #2B2E48;
-    --sur_acc: #2B2E48;
-/*    --sur_acc: #41456B;*/
+    --sur2b: #2B2E48;
+/*    --sur_acc: #2B2E48;*/
+    --sur_acc: #41456B;
     --sig1: #5959EF;
     --sig2: #8b8b8b;
     --sig1_acc_dark: #3733db;
@@ -46,6 +49,9 @@ div, pre {box-sizing: border-box;}
     --on_sur: #C2C2E6;
     --on_sig1: #ffffff;
     --on_sig2: #ffffff;
+    
+    --shade1: 0 0 1px 0 rgba(0, 0, 0, 0.4),
+        0 1px .5em 1px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -99,7 +105,7 @@ header {
     height: calc(var(--menu-height, 4) * 1em);
     border-top: 1px solid #C8C8C8;
     border-top: 1px solid var(--sur_acc, #C8C8C8);
-    background-color: var(--sur1b);
+    background-color: var(--sur2b);
     transition: 
         all 0.25s ease-in-out,
         height 0.25s ease-out 0.25s,
@@ -118,6 +124,7 @@ header.expand {
 
 .menu-outer {
     box-sizing: border-box;
+    background-color: var(--sur2b);
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -135,16 +142,17 @@ header.expand {
     height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
     opacity: 0;
     padding-top: 100px;
+    background-color: var(--sur1);
+/*    background-color: green;*/
     transition: 
         opacity 0.25s ease-in-out,
         padding-top 0.5s ease-in;
-    background-color: var(--sur2);
 
 }
 
 .menu-inner.expand {
     opacity: 1;
-    padding -top: 0;
+    padding-top: 0;
     transition: 
         opacity 0.5s ease-out 0.75s,
         padding-top 0.5s ease-in-out 0.5s;
@@ -181,9 +189,7 @@ pre.sourceCode, pre:not(.sourceCode) {
     background-color: #ffffff;
     background-color: var(--sur1b, #ffffff);
     border-radius: 2px;
-    box-shadow: 
-        0 0 1px 0 rgba(22, 24, 37, 0.08),
-        0 1px .5em 1px rgba(22, 24, 37, 0.2);
+    box-shadow: var(--shade1);
 }
 
 pre:not(.sourceCode) {
@@ -334,6 +340,10 @@ sub {
     transition: background 0.1s ease-in;
 }
 
+.navTrigger.active i {
+    transform: all 0s ease-out 0.5s;
+}
+
 .navTrigger i:nth-child(1) {
     -webkit-animation: outT var(--nt-anim-duration) backwards;
     animation: outT var(--nt-anim-duration) backwards;
@@ -369,11 +379,6 @@ sub {
 .navTrigger.active i:nth-child(3) {
     -webkit-animation: inBtm var(--nt-anim-duration) forwards;
     animation: inBtm var(--nt-anim-duration) forwards;
-}
-
-.navTrigger.active i {
-    background: #4E517D;
-    transform: all 0s ease-out 0.5s;
 }
 
 @-webkit-keyframes inM{
