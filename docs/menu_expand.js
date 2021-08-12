@@ -26,7 +26,8 @@ $(document).ready(function() {
         $(menu_container).toggleClass('expand');
         $(menu_bar).toggleClass('expand');
         $(menu_bar).children().toggleClass('expand');
-        $('.navTrigger').toggleClass('active')
+        $('.navTrigger').toggleClass('active');
+        $('.content-container').toggleClass('expand');
 
     };
 

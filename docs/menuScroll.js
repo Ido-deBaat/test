@@ -4,10 +4,18 @@ var scroll_direction;
 var scroll_delta = 24;
 var height_navbar = $('.menu-container').outerHeight();
 
-$(window).scroll(function(event) {scrolled = true;});
+//if(window_width < 768) {
+//    
+//};
+
+$(window).scroll(function(event) {
+    
+    if ($(window).width() < 768) {scrolled = true;};
+    
+});
 
 setInterval(function() {
-
+    
     if (scrolled) {
         set_scroll_dir();
         scrolled = false;
