@@ -12,14 +12,14 @@ div, pre {box-sizing: border-box;}
     --sur1b: #ffffff;
     --sur2: #e6e6e6;
     --sur2b: #ffffff;
-    --sur_acc: #e6e6e6;
-    /*    --sur_acc: #c8c8c8;*/
+    --sur_acc: #d0d0d0;
     --sig1: #4939f3;
     --sig2: #8b8b8b;
     --sig1_acc_dark: #3733db;
     --sig1_acc_light: #5959ef;
 
     --on_sur: #161825;
+    --on_sur_lc: #41456B;
     --on_sig1: #ffffff;
     --on_sig2: #ffffff;
 
@@ -39,14 +39,14 @@ div, pre {box-sizing: border-box;}
     --sur1b: #202337;
     --sur2: #2B2E48;
     --sur2b: #2B2E48;    
-    --sur_acc: #2B2E48;
-    /*    --sur_acc: #41456B;*/
+    --sur_acc: #41456B;
     --sig1: #5959EF;
     --sig2: #8b8b8b;
     --sig1_acc_dark: red;
     --sig1_acc_light: red;
 
     --on_sur: #C2C2E6;
+    --on_sur_lc: #7C7EB1;
     --on_sig1: #ffffff;
     --on_sig2: #ffffff;
 
@@ -110,7 +110,7 @@ header {
     height: 4em;
     height: calc(var(--menu-height, 4) * 1em);
     border-top: 1px solid #C8C8C8;
-    border-top: 1px solid var(--sur_acc, #C8C8C8);
+    border-top: 1px solid var(--sur2, #C8C8C8);
     background-color: var(--sur2b);
     transition: 
         height 0.25s ease-out 0.25s,
@@ -144,6 +144,7 @@ header.expand {
 }
 
 .menu-inner {
+    position: relative;
     height: calc(100% - ((var(--menu-height, 4) * 1em) - var(--menu-padding, 8px) * 2));
     opacity: 0;
     padding-top: 100px;
@@ -204,7 +205,7 @@ pre:not(.sourceCode) {
 }
 
 code {
-    background-color: var(--sur_acc, #c8c8c8);
+    background-color: var(--sur2, #c8c8c8);
     padding-left: .25em;
     padding-right: .25em;
     padding-bottom: 0.05em;
@@ -457,22 +458,22 @@ sub {
 
 /* -- darkmode trigger -- */
 .menu-tools {
-    opacity: 0;
+    padding: 12px 16px 4px 16px;
+    margin: 0;
     position: absolute;
-    width: 150px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 16px;
-    height: calc((var(--menu-height, 4) * 1em) - (var(--menu-padding, 8px) * 2));
-    bottom: var(--menu-padding, 8px);
-    right: var(--menu-padding, 8px);
-    transition: all 0.25s ease-in-out;
+    bottom: var(--menu-padding);
+    width: 100%;
+    background-color: var(--sur1);
+    border-top: 1px solid var(--sur2);
+    color: var(--on_sur_lc, red);
 }
+/*
 
 .menu-inner.expand + .menu-tools {
     opacity: 100;
     transition: opacity 0.25s ease-in-out 0.75s;
 }
+*/
 
 .switch {
     -webkit-touch-callout: none;
@@ -484,13 +485,12 @@ sub {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(10%);
     width: calc(var(--menu-trigger-heigt, 22px) * 2);
     height: 22px;
     border-radius: 11px;
     cursor: pointer;
-    background-color: var(--sur_acc, red);
+    background-color: var(--sur_acc);
 }
 
 .switch input {
@@ -588,12 +588,11 @@ input:checked + .slider:after {
         position: fixed;
         width: var(--menu-width);
         border-top: none;
-        border-right: 1px solid var(--sur_acc, #C8C8C8);
+        border-right: 1px solid var(--sur2, #C8C8C8);
         height: 100%;
         padding: var(--menu-padding, 8px);
         transition: 
             all 0.25s ease-in-out,
-            /*            height 0.25s ease-out 0.25s,*/
             width 0.25s ease-out 0.25s,
             padding 0.25s ease-in-out 0.5s,
             bottom 0.2s ease-out; /* for nav-up animation */
@@ -629,19 +628,6 @@ input:checked + .slider:after {
     }
 
     .menu-outer.expand {box-shadow: var(--shade2);}
-
-    .menu-tools {
-        width: var(--menu-width);
-        justify-content: center;
-        padding-right: 0;
-        height: 64px;
-/*        bottom: auto;*/
-        bottom: var(--menu-padding);
-        left: calc(var(--menu-width)/2);
-        right: auto;
-        transform: translateX(-50%);
-        
-    }
 
 
 }
