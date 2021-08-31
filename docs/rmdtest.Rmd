@@ -1,0 +1,95 @@
+---
+title: "je moeder"
+output: 
+  html_document: 
+    template: template.html
+    df_print: paged
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+par(bg = "transparent")
+
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r results = 'hide'}
+(11 * 24.99) +
+  (12 * 4.99) +
+  (12 * 5.99) +
+  (12 * 6.99) +
+  (12 * 8.99) +
+  2.99 +
+  120 +
+  78.6
+  
+```
+
+Curabitur ac nisl tellus. In metus nunc, consequat eget tortor at, laoreet pretium erat. Donec convallis urna a gravida rhoncus. Etiam ligula dui, molestie et velit sit amet, ullamcorper suscipit metus. Suspendisse eu volutpat augue. Sed semper rutrum aliquam. Cras quis mi finibus, ultrices lacus sit amet, facilisis dui. Aliquam dignissim blandit dui, sit amet ultrices nisl vehicula in. Donec rhoncus congue neque sodales bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mollis commodo lacus in sollicitudin. Fusce a tempus justo, vitae bibendum turpis. In vitae sodales dui, ut varius nibh.
+
+Cras congue vitae diam sollicitudin viverra. Donec tempus, ante eget imperdiet fringilla, justo urna placerat ante, molestie euismod nulla erat sed elit. Aliquam maximus posuere eleifend. Vivamus sit amet dui scelerisque, fringilla neque suscipit, convallis libero. Suspendisse pellentesque tellus vel erat posuere porttitor id sit amet est. Etiam non tellus ac felis faucibus fermentum. Cras nec ligula at orci scelerisque suscipit vitae non lacus. Proin egestas massa quis purus pellentesque, non rutrum mi rhoncus. Praesent blandit et lectus non pellentesque.
+
+### Hier is de tabel
+
+```{r}
+# line two
+# and line three
+head(mtcars, n = 20)
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at porttitor est. Ut vitae sem at magna egestas fringilla. Sed vel magna erat. Vivamus bibendum, orci pharetra vestibulum tincidunt, neque orci ultrices sem, a cursus libero dui et ante. Phasellus at arcu sed magna ornare porta. Mauris quis venenatis purus. Vivamus eleifend vehicula nisi, id ornare ligula pharetra sed. Mauris eget dui vestibulum, euismod nunc varius, lacinia magna. Praesent accumsan enim dolor, eu faucibus nibh eleifend vestibulum.
+
+## heavy text input
+
+```{r}
+"When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:"
+```
+
+```{r}
+24 * 3
+
+144 / 24
+
+120 / 24
+
+48 / 24
+
+192 / 24
+```
+
+## Hier is nog een plot
+
+```{r}
+library(novalinq.brush)
+range_pal <- hsv_range(input = c("#E2E2F7", "#161825"), s = c(.59, .94, .75, 1), n = 13)
+
+range_pal
+```
+
+```{r}
+show_palette(range_pal)
+```
+
