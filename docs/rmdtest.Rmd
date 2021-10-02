@@ -5,7 +5,7 @@ output:
     template: template.html
     df_print: paged
     toc: yes
-    toc_float: yes
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -68,17 +68,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at porttitor 
 "When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:"
 ```
 
-```{r}
-24 * 3
-
-144 / 24
-
-120 / 24
-
-48 / 24
-
-192 / 24
-```
 
 ## Hier is nog een plot
 
@@ -92,4 +81,56 @@ range_pal
 ```{r}
 show_palette(range_pal)
 ```
+
+
+```{r}
+your_mother <- function(x, a = 1, b = 1, c = 1) {
+  
+  require(ggplot2)
+  
+  d = data.frame(x = x, y = a*x^2 + b*x + c)
+  
+  ggplot(d, aes(x = d$x, y = d$y)) +
+    geom_line() +
+    coord_fixed(ratio = .02)
+  
+  
+}
+
+sqrt(20/6)
+
+your_mother(-100:100, a = 3, b = 30, c = 7) +
+  xlim(c(-50, 50)) +
+  ylim(c(-1000, 1000))
+
+
+
+ym2 <- function(x = -100:100, a = 0, b = 0, c = 0, d = 0) {
+  
+  d <- data.frame(x = x, y = a*(x^3) + b*(x^2) + c*x + d)
+  
+  ggplot(d, aes(x = d$x, y = d$y)) +
+    geom_line() +
+    coord_fixed(ratio = .02)
+  
+}
+
+quad <- function(a,b,c){
+  c(
+    (-b + sqrt(b^2 - 4*a*c))/(2*a),
+    (-b - sqrt(b^2 - 4*a*c))/(2*a)
+    )
+}
+
+quad(a = 3, b = 30, c = 7)
+
+ym2(a = 1, b = 15, c = 7) +
+  xlim(c(-20, 10)) +
+  ylim(c(-50, 1000))
+
+```
+
+
+
+
 

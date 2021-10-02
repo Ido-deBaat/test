@@ -372,6 +372,14 @@ $endif$
             }
             
             @media only screen and (min-width: 768px) {
+                
+                body {
+                    --menu-padding: 8px;
+                    --menu-width: 64px;
+                    --menu-height: 0;
+                    --sidebar-width: 240px;
+                }
+                
                 .content-container.expand {
                     margin-left: calc(var(--menu-width) + var(--sidebar-width));
                     transition: margin-left 0.5s ease-in-out;
