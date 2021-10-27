@@ -36,7 +36,7 @@ library(ggplot2)
 
 ## Sit at ultrices
 
-```{r echo = FALSE}
+```{r echo = FALSE, eval = FALSE}
 connection <- dbConnect(
   drv = MySQL(),
   host = "35.204.125.184",
@@ -53,11 +53,13 @@ connection
 Sit at ultrices sit in sapien ligula orci mauris lacinia ut. Sed ut sed dictum. Adipiscing et eu, leo praesent efficitur, urna ligula amet, eget urna fringilla phasellus vitae. Duis aliquam sit, vitae sapien consectetur. Mauris felis vel aenean libero.
 
 ```{r}
-titanic <- connection %>% 
-  tbl("titanic") %>% 
-  collect()
+titanic <- readr::read_csv2("~/desktop/temp/r/data/titanic.txt")
 
-dbDisconnect(connection)
+# titanic <- connection %>% 
+#   tbl("titanic") %>% 
+#   collect()
+# 
+# dbDisconnect(connection)
 ```
 
 Tristique praesent. Mi pretium interdum ullamcorper aliquet orci. Sapien amet fermentum nascetur. Ut pharetra, interdum sem nulla imperdiet nulla. Suspendisse amet mus turpis per, ut magna, nisl auctor sit sed ac arcu. In feugiat amet diam mattis scelerisque orci a nostra in nisl. Ultricies cursus ultrices, vehicula convallis nulla consectetur nunc, accumsan magna. Nostra augue, ut sed. Egestas ex sem in eros nullam quisque in, viverra sed magnis. Etiam, interdum vestibulum a ad sed non dictum. Nullam nulla in tristique imperdiet blandit id, vehicula. Cras, mus ut dignissim ut mauris vehicula ante, sed.
@@ -70,6 +72,7 @@ titanic
 
 Pharetra sed faucibus luctus aliquam magnis lacus lectus suscipit primis sociosqu velit. Finibus rutrum suspendisse ultricies massa. Vel enim amet leo ridiculus massa velit et, est varius, commodo. Et netus et nec dolor nullam magnis porta sed blandit, molestie eget. Ac vestibulum ullamcorper. Mauris congue pharetra, in mauris justo pretium vel. Sed et mauris ac nec varius in, pulvinar. Class curabitur id montes nulla magna vitae, non viverra. Arcu ultrices sem sed quis justo metus sed, tortor. Condimentum pellentesque risus vitae ipsum commodo, eu, vitae.
 
+
 # Vel enim amet leo ridiculus
 
 ::: {.intro2 .gray}
@@ -80,7 +83,9 @@ At ipsum vestibulum et ultricies et fringilla, vitae. Ullamcorper lacus ligula d
 
 Porttitor sem interdum nunc montes aliquam. Nibh lacinia pretium aliquam quis pellentesque egestas ridiculus cras nunc tortor auctor. Ut, adipiscing etiam odio ac lacus nisi euismod habitant purus. Sed scelerisque ac hendrerit neque.
 
-`Felis = rhoncus * (gravida + ipsum) + sapien`
+::: {.fullwidth}
+`felis = rhoncus * (gravida + ipsum)`
+:::
 
 Mauris mauris conubia diam ante tincidunt velit nibh, sed lobortis leo. Laoreet neque fringilla sed. Taciti ut massa risus sed eget.
 
@@ -104,7 +109,7 @@ titanic %>%
   coord_flip()
 ```
 
-#### Nunc morbi a, non
+#### Nunc morbi a, non {.fullwidth}
 
 Ut non sodales enim amet maximus at tincidunt posuere nullam taciti sociosqu. Eleifend sapien sed lacinia felis. Feugiat nibh dapibus arcu felis nisl sed ex vitae in. Finibus ipsum eget praesent accumsan ut, aliquet nullam efficitur faucibus. Vehicula tellus mattis est. Volutpat enim orci phasellus, luctus efficitur torquent, sociosqu id.
 
@@ -120,6 +125,7 @@ Bibendum vel condimentum egestas in blandit. Id sociosqu iaculis vestibulum aliq
 -   pellentesque ante maecenas placerat lacus. Arcu eu a netus at nibh a. Nulla ligula ac et in ad. Potenti at at tempor magna purus hendrerit, in volutpat vel vitae;
 -   curae sit cubilia ac erat, eget neque rutrum nulla nisl. Per ex vestibulum ut in ridiculus convallis sit suspendisse justo vitae ipsum. Augue himenaeos, nisl rutrum, suspendisse molestie mattis nisl litora vitae.
 
+::: {.fullwidth}
 ```{r}
 passenger_class <- factor(
   x = titanic$pclass,
@@ -136,11 +142,12 @@ age <- floor(titanic$age)
 
 age[1:5]
 ```
+:::
+
 
 At ipsum vestibulum et ultricies et fringilla, vitae. Ullamcorper lacus ligula dui lobortis ullamcorper integer. Semper sed, sem eleifend sed quisque ligula et. Nec euismod curabitur lobortis, venenatis. Ultrices libero sagittis purus bibendum vel sit nibh nibh. At vestibulum dui dis, porttitor sem interdum nunc montes aliquam. Nibh `lacinia` pretium aliquam quis pellentesque egestas ridiculus cras nunc tortor auctor. Ut, adipiscing etiam odio ac lacus nisi euismod habitant purus. Sed scelerisque ac hendrerit neque. Felis rhoncus gravida ipsum sapien erat felis. Mauris mauris conubia diam ante tincidunt velit nibh, sed lobortis leo. Laoreet neque fringilla sed. Taciti ut massa risus sed eget.
 
 # Volutpat enim orci phasellus
 
 Ornare ultricies donec facilisis in eu, sem dolor magna mauris. Ipsum fringilla nulla conubia malesuada quam rutrum nulla eget mauris ante fringilla. Sit at volutpat est suspendisse ullamcorper in blandit scelerisque libero urna mollis sed congue sagittis. Nunc morbi a, non. Ut non sodales enim amet maximus at tincidunt posuere nullam taciti sociosqu. Eleifend sapien sed lacinia felis. Feugiat nibh dapibus arcu felis nisl sed ex vitae in. Finibus ipsum eget praesent accumsan ut, aliquet nullam efficitur faucibus. Vehicula tellus mattis est. Volutpat enim orci phasellus, luctus efficitur torquent, sociosqu id.
-
 
