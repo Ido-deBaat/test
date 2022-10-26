@@ -94,10 +94,10 @@ body {
     height: 48px;
     height: var(--menu_bar_width, 48px);
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    border-top: 1px solid var(--surface_3, #c6c6c6);
+    border-bottom: 1px solid var(--surface_3, #c6c6c6);
     background-color: var(--surface_1, #f0f0f0);
 
     /* on closing menu */
@@ -134,17 +134,17 @@ body {
 
   .menu_dock {
     height: 48px;
-    height: calc(var(--menu_bar_width, 48px) + env(safe-area-inset-bottom));
+    height: calc(var(--menu_bar_height, 48px));
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    /*    bottom: 0;*/
   }
 
   .menu_panel {
     position: absolute;
-    bottom: calc(48px + env(safe-area-inset-bottom));
-    bottom: calc(var(--menu_bar_height, 48px) + env(safe-area-inset-bottom));
+    top: 48px;
+    top: var(--menu_bar_height, 48px);
     width: 100%;
     height: 0;
     overflow-y: scroll;
@@ -248,7 +248,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--surface_3);
-/*    border: 1px solid var(--background);*/
+    /*    border: 1px solid var(--background);*/
   }
 
   .switch input {
@@ -400,6 +400,8 @@ body {
   .hero {
     display: flex;
     align-items: center;
+    margin-top: 48px;
+    margin-top: var(--menu_bar_height);
     height: calc(100% - 48px);
     height: calc(100% - var(--menu_bar_height));
     background-image: url('banana.jpg');
@@ -533,7 +535,7 @@ body {
 
     color: var(--secundary);
   }
-  
+
   .menu-tools {
     top: auto;
     left: 50%;
@@ -541,7 +543,7 @@ body {
     margin: 0;
     margin-bottom: 16px;
     transform: translate(-50%);
-    
+
   }
 
   main {
@@ -550,6 +552,7 @@ body {
   }
 
   .hero {
+    margin: 0;
     height: 100%;
   }
 
