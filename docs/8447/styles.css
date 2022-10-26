@@ -188,11 +188,10 @@ body {
 
   .menu_trigger_wrapper {
     position: absolute;
-    left: 50%;
+    right: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 12px;
-    width: 64px;
+    transform: translate(0, -50%);
+    padding: 16px;
   }
 
 
@@ -204,10 +203,10 @@ body {
     display: flex;
     align-items: flex-start;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 16px;
+    margin-left: 16px;
 
   }
 
@@ -237,7 +236,7 @@ body {
   .menu-tools {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: 40px;
     margin: 0 16px;
     transform: translateY(-50%);
   }
@@ -283,6 +282,7 @@ body {
     width: 100%;
     background-color: #161825;
     background-color: var(--on_sur_1, #111111);
+/*    background-color: var(--primary, #111111);*/
     border-radius: 2px;
   }
 
@@ -502,8 +502,10 @@ body {
   .menu_trigger_wrapper {
     position: absolute;
     top: 50%;
+    right: auto;
     left: 0;
     width: 100%;
+    padding: 12px;
     transform: translateY(-50%);
   }
 
@@ -547,6 +549,7 @@ body {
 
   .menu-tools {
     top: auto;
+    right: auto;
     left: 50%;
     bottom: 0;
     margin: 0;
