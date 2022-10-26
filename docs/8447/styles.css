@@ -228,6 +228,7 @@ body {
   .menu-tools {
     position: absolute;
     top: 50%;
+    left: 0;
     margin: 0 16px;
     transform: translateY(-50%);
   }
@@ -247,6 +248,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--surface_3);
+/*    border: 1px solid var(--background);*/
   }
 
   .switch input {
@@ -338,16 +340,6 @@ body {
     overflow-y: hidden;
     height: 0;
     transition: height .25s ease-in-out;
-  }
-  
-  .menu-tools {
-    top: auto;
-    left: 50%;
-    bottom: 0;
-    margin: 0;
-    margin-bottom: 16px;
-    transform: translate(-50%);
-    
   }
 
   .menu > li:hover > p {
@@ -540,6 +532,16 @@ body {
     font-weight: 400;
 
     color: var(--secundary);
+  }
+  
+  .menu-tools {
+    top: auto;
+    left: 50%;
+    bottom: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    transform: translate(-50%);
+    
   }
 
   main {
