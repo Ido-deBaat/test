@@ -169,12 +169,11 @@ body {
   }
 
   .menu_panel_content {
+    padding: 2em;
     opacity: 0;
-    margin: 2em;
+/*    margin: 2em;*/
     /*    on closing menu   */
     transition: opacity 0.1s ease-in-out 0.1s;
-    background-color: aqua;
-    padding-bottom: 1000px;
   }
 
   .menu_container.active > .menu_panel > .menu_panel_content {
@@ -282,7 +281,6 @@ body {
     width: 100%;
     background-color: #161825;
     background-color: var(--on_sur_1, #111111);
-/*    background-color: var(--primary, #111111);*/
     border-radius: 2px;
   }
 
