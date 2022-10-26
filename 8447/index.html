@@ -1,0 +1,106 @@
+<html color-mode="light">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="darkmode.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    styles-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hamburgers.css">
+    <!--    fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <script>
+      function toggle_menu() {
+
+        if($('#menu_trigger').hasClass('is-active')) {
+
+          $('#menu_trigger').removeClass('is-active');
+          $('#menu_bar').removeClass('active');
+          $('.menu_overlay').removeClass('active');
+
+        } else {
+
+          $('#menu_trigger').addClass('is-active');
+          $('#menu_bar').addClass('active');
+          $('.menu_overlay').addClass('active');
+
+        };
+
+      };
+    </script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="menu_overlay" onclick="toggle_menu()"></div>
+      <div id="menu_bar" class="menu_container">
+        <div class="menu_dock">
+          <a class="logo_wrapper" href="index.html">  
+            <h3>studio</h3><h1>8447<span>&#8482;</span></h1>
+          </a>
+          <div class="menu-tools">
+            <label class="switch">
+              <input type="checkbox" class="darkmode-trigger" id="darkmode-toggle">
+              <span class="slider"><span></span></span>
+            </label>
+          </div>
+          <div class="menu_trigger_wrapper">
+            <button id="menu_trigger" class="hamburger hamburger--spin" onclick="toggle_menu()" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="menu_panel">
+          <div class="menu_panel_content">
+            <ul class="menu">
+              <li class="main_item">
+                <a>Shop</a>
+                <p>buy buy buy!</p>
+              </li>
+              <li class="main_item">
+                <a>Meubelmakerij</a>
+                <p>building your ideas</p>
+              </li>
+              <li class="main_item">
+                <a>CNC &amp; laser service</a>
+                <p>carving and cutting your designs</p>
+              </li>
+              <li class="main_item">
+                <a>4th thing here</a>
+                <p>lorem ipsum dolor sit amet</p>
+              </li>
+              <li><a class="extra_item">over 8447</a></li>
+              <li><a class="extra_item">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content_container">
+      <section class="hero">
+        <div class="hero_content">
+          <h1>8447</h1>
+          <h4 style="font-weight: 300;">catch phrase!</h4>
+        </div>
+      </section>
+      <p>test 123</p>
+      <div style="height: 2000px;">
+        <p>lorem ipsum je moeder sit amet</p>
+      </div>
+    </main>
+
+  </body>
+
+</html>
