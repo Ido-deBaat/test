@@ -2,6 +2,11 @@ html, .root {font-size: 16px; line-height: 24px; height: 100%; padding: 0;}
 
 div, pre {box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
 
+.no_touching {
+  touch-action: none;
+/*  overflow: hidden;*/
+}
+
 html{
   --g01: #F0F0F0;
   --g02: #DDDDDD;
@@ -90,6 +95,7 @@ body {
   /*  ## -- menu bar -- ##  */
 
   .menu_container {
+    touch-action: auto;
     width: 100%;
     height: 48px;
     height: var(--menu_bar_width, 48px);
@@ -105,6 +111,7 @@ body {
   }
 
   .menu_container.active {
+    touch-action: none;
     height: 100%;
     /* on openening menu */
     transition: height .25s ease-in-out;
@@ -166,6 +173,8 @@ body {
     margin: 2em;
     /*    on closing menu   */
     transition: opacity 0.1s ease-in-out 0.1s;
+    background-color: aqua;
+    padding-bottom: 1000px;
   }
 
   .menu_container.active > .menu_panel > .menu_panel_content {
