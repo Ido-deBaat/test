@@ -65,6 +65,7 @@ html{
 
 body {
 
+  --content_maxwidth: 1024px;
   --menu_bar_width: 48px;
   --menu_bar_height: 48px;
   --menu_field_width: 400px;
@@ -88,10 +89,28 @@ body {
 }
 
 
+.to_tight {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background);
+}
+
 /*  for mobile devices  */
 @media only screen and (min-width: 300px) {
-
-
+  
+  .to_tight {
+    display: none;
+    widows: 0;
+    height: 0;
+  }
+  
   /*  ## -- menu bar -- ##  */
 
   .menu_container {
@@ -408,6 +427,14 @@ body {
     background-color: #ffffff;
     background-color: var(--background, #ffffff);
   }
+  
+  .main_content {
+    max-width: 1024;
+    max-width: var(--content_maxwidth);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+  }
 
   .hero {
     display: flex;
@@ -444,6 +471,9 @@ body {
   }
   
   .breadcrumb_bar {
+    max-width: var(--content_maxwidth);
+    margin-left: auto;
+    margin-right: auto;
     padding: 16px;
     color: var(--acc_orange);
     
@@ -453,10 +483,16 @@ body {
     margin: 0 .2em;
     text-decoration: none;
     color: var(--on_sur_1);
+    transition: color .25s ease-in-out;
   }
   
   .breadcrumb_bar > a:visited {
     color: var(--on_sur_1);
+  }
+  
+  .breadcrumb_bar > a:hover{
+    color: var(--acc_orange);
+    transition: color .1s ease-in-out;
   }
   
   .breadcrumb_bar > a:first-child {
