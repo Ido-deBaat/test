@@ -4,7 +4,7 @@ div, pre {box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizin
 
 .no_touching {
   touch-action: none;
-/*  overflow: hidden;*/
+  overflow: hidden;
 }
 
 html{
@@ -255,8 +255,7 @@ body {
     height: 24px;
     border-radius: 4px;
     cursor: pointer;
-    background-color: var(--surface_3);
-    /*    border: 1px solid var(--background);*/
+    background-color: var(--surface_4);
   }
 
   .switch input {
