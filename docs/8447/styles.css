@@ -1,10 +1,18 @@
-html, .root {font-size: 16px; line-height: 24px; height: 100%; padding: 0;}
+/*  #######################################################  */
+/*  page settings                                            */
+/*  #######################################################  */
 
-div, pre {box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+html, .root {
+  font-size: 16px; 
+  line-height: 24px; 
+  height: 100%; 
+  padding: 0;
+}
 
-.no_touching {
-  touch-action: none;
-  overflow: hidden;
+div, pre {
+  box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
 }
 
 html{
@@ -22,6 +30,34 @@ html{
   --g12: #111111;
   --g13: #000000;
 }
+
+body {
+
+  --content_maxwidth: 1024px;
+  --menu_bar_width: 48px;
+  --menu_bar_height: 48px;
+  --menu_field_width: 400px;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: #f0f0f0;
+  background-color: var(--surface_1, #f0f0f0);;
+
+  border: none;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #111111;
+  color: var(--on_sur_1, #111111);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/*  ## corlour theme                                         */
 
 :root[color-mode="light"] {
 
@@ -63,31 +99,12 @@ html{
   --on_sig: var(--g02);
 }
 
-body {
+/*  ## aditional functionality                               */
 
-  --content_maxwidth: 1024px;
-  --menu_bar_width: 48px;
-  --menu_bar_height: 48px;
-  --menu_field_width: 400px;
-
-  height: 100%;
-  margin: 0;
-  padding: 0;
-
-  background-color: #f0f0f0;
-  background-color: var(--surface_1, #f0f0f0);;
-
-  border: none;
-  font-weight: 300;
-  font-family: 'Source Sans Pro', sans-serif;;
-  font-size: 1em;
-  line-height: 1.5em;
-  color: #111111;
-  color: var(--on_sur_1, #111111);
-  width: 100%;
-  overflow-x: hidden;
+.no_touching {
+  touch-action: none;
+  overflow: hidden;
 }
-
 
 .to_tight {
   position: fixed;
@@ -102,16 +119,31 @@ body {
   background-color: var(--background);
 }
 
+
+/*  ##   text                                                */
+
+
+
+
 /*  for mobile devices  */
 @media only screen and (min-width: 300px) {
-  
+
+  /*  #####################################################  */
+  /*  page settings                                          */
+  /*  #####################################################  */
+
   .to_tight {
     display: none;
     widows: 0;
     height: 0;
   }
-  
-  /*  ## -- menu bar -- ##  */
+
+  /*  #####################################################  */
+  /*  #  menu                                                */
+  /*  #####################################################  */
+
+
+  /*  ## menu bar                                            */
 
   .menu_container {
     touch-action: auto;
@@ -202,7 +234,7 @@ body {
   }
 
 
-  /*  ## -- menu trigger -- ##  */
+  /*  ## menu trigger                                        */
 
   .menu_trigger_wrapper {
     position: absolute;
@@ -249,7 +281,7 @@ body {
   }
 
 
-  /*  ## -- darkmode trigger -- ##  */
+  /*  ## darkmode toggle                                     */
 
   .menu-tools {
     position: absolute;
@@ -345,7 +377,7 @@ body {
   }
 
 
-  /*  ## -- menu -- ##  */
+  /*  ## nav                                                 */
 
   .menu {
     list-style-type: none;
@@ -420,14 +452,17 @@ body {
   }
 
 
-  /*  ## -- page content -- ##  */
+
+  /*  #####################################################  */
+  /*  page content                                           */
+  /*  #####################################################  */
 
   main {
     margin: 0;
     background-color: #ffffff;
     background-color: var(--background, #ffffff);
   }
-  
+
   .main_content {
     max-width: 1024;
     max-width: var(--content_maxwidth);
@@ -457,7 +492,10 @@ body {
   }
 
 
-  /*  ## -- footer -- ##  */
+  /*  #####################################################  */
+  /*  footer                                                 */
+  /*  #####################################################  */
+
   footer {
     background-color: var(--surface_1);
     border-top: 1px solid var(--surface_3);
@@ -465,40 +503,40 @@ body {
     /*temp*/
     padding-bottom: 512px;
   }
-  
+
   .breadcrumb_wrapper {
     border-bottom: 1px solid var(--surface_3);
   }
-  
+
   .breadcrumb_bar {
     max-width: var(--content_maxwidth);
     margin-left: auto;
     margin-right: auto;
     padding: 16px;
     color: var(--acc_orange);
-    
+
   }
-  
+
   .breadcrumb_bar > a {
     margin: 0 .2em;
     text-decoration: none;
     color: var(--on_sur_1);
     transition: color .25s ease-in-out;
   }
-  
+
   .breadcrumb_bar > a:visited {
     color: var(--on_sur_1);
   }
-  
+
   .breadcrumb_bar > a:hover{
     color: var(--acc_orange);
     transition: color .1s ease-in-out;
   }
-  
+
   .breadcrumb_bar > a:first-child {
     font-weight: 700;
   }
-  
+
   .breadcrumb_bar > a:last-child {
     font-weight: 700;
   }
