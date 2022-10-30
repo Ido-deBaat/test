@@ -265,6 +265,7 @@ sub {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 2;
     border-bottom: 1px solid var(--surface_3, #c6c6c6);
     background-color: var(--surface_1, #f0f0f0);
 
@@ -286,6 +287,7 @@ sub {
     height: 0;
     background-color: rgba(0, 0, 0, 0.8);
     background-color: var(--surface_2);
+    z-index: 1;
 
     opacity: 0;
     transition: opacity 0.25s ease-in-out,
@@ -690,51 +692,52 @@ sub {
     max-width: var(--content_maxwidth);
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3em;
     padding: 0 var(--content_margin, 32px);
+    max-width: 480px;
   }
 
   .email_input {
     padding: 4px;
-    max-width: 500px;
     background: var(--background);
-    border: 1px solid var(--primary);
-    position: relative;
+    background: var(--surface_1);
+    border: 1px solid var(--surface_4);
     width: 100%;
   }
 
   #nl_signup {
-    position: relative;
     width: 100%;
-    height: 3em;
-    border: 1px solid black;
-    padding: .75em 1em;
+    height: 40px;
+    padding: 6px 1em;
+    font-size: 16px;
+    border: 1px solid var(--surface_4);
+    background-color: var(--surface_3);
     text-align: center;
-    color: var(--on_acc);
-    background-color: var(--primary);
-    z-index: 1;
+    color: var(--primary);
+    color: var(--on_sur_1);
   }
-  
+
   #nl_signup:hover {
-    background-color: var(--primary_hl);
+    background-color: var(--surface_4);
   }
-  
+
   #nl_signup span {
     display: block;
     overflow: hidden;
   }
-  
+
   .msg_signup {
     height: 1.5em;
   }
-  
+
   .active .msg_signup {
     height: 0;
   }
-  
+
   .msg_send {
     width: 0;
   }
-  
+
   .active .msg_send {
     width: 100%;
   }
@@ -747,37 +750,57 @@ sub {
     position: relative;
     width: 100%;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--on_sur_1);
     background-color: transparent;
+    /*    background: var(--background);*/
   }
-  
+
   .email_input > input[type=text]::placeholder {
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--secundary);
+    color: var(--acc_1);
     display: none;
     height: 0;
   }
-  
+
   .active > input[type=text] {
     height: 48px;
     padding: 1em;
-    margin-bottom: 4px;
+    border-bottom: 1px solid var(--surface_4);
+    transition: height .125s ease-out;
   }
-  
+
   .active > input[type=text]::placeholder {
     height: auto;
   }
-  
+
   #nl_submit {
     display: none;
   }
 
   .checkbox_options {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
     list-style: none;
     padding-left: 0;
+    accent-color: var(--acc_1);
+  }
+
+  .active .checkbox_options {
+    margin: .75em;
+    height: 48px;
+    transition: height .125s ease-out;
   }
 
   .checkbox_options > li > label > input[type=checkbox] {
     margin-right: 1em;
   }
+  
   .checkbox_options > li {
 
   }

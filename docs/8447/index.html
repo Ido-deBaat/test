@@ -129,7 +129,8 @@
       </div>
       <div class="newsletter_outer">
         <div class="newsletter_inner">
-          <h3>blijf op de hoogte</h3>
+          <h3>blijf op de hoogte!</h3>
+          <p>We brengen regelmatig nieuwe producten uit of voegen nieuwe functionaliteiten toe aan onze website. Soms zijn er ook aanbiedingen. Als je van deze updates op de hoogte wilt blijven kun je je beneden aanmelden. We zullen je niet volspammen.</p>
           <form id="nl_signup_form">
             <div class="email_input">
               <script>
@@ -148,7 +149,7 @@
 
                     } else {
 
-//                      $('#nl_signup_form').submit()
+                      //                      $('#nl_signup_form').submit()
                       $('#nl_submit').click();
 
                     }
@@ -156,21 +157,21 @@
                   });
                 });
               </script>
-              <input id="nl_email" type="text" placeholder="email" name="email" required>
+              <input id="nl_email" type="text" placeholder="e-mailadres" name="email" required>
+              <ul class="checkbox_options">
+                <li>
+                  <label><input type="checkbox" value="new products" checked><span class="bold">nieuws:</span> hooguit 6 keer per jaar</label>
+                </li>
+                <li>
+                  <label><input type="checkbox" value="new products" checked><span class="bold">aanbiedingen:</span> ook niet zo vaak</label>
+                </li>
+              </ul>
               <div role="button" id="nl_signup">
                 <span class="msg_signup">schrijf je in voor de nieuwsbrief</span>
                 <span class="msg_send">verstuur</span>
               </div>
               <input type="submit" id="nl_submit">
             </div>
-            <ul class="checkbox_options">
-              <li>
-                <label><input type="checkbox" value="new products" checked><span class="bold">nieuws:</span> hooguit 6 keer per jaar</label>
-              </li>
-              <li>
-                <label><input type="checkbox" value="new products" checked><span class="bold">aanbiedingen:</span> ook niet zo vaak</label>
-              </li>
-            </ul>
           </form>
         </div>
       </div>
