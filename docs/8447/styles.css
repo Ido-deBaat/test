@@ -236,7 +236,6 @@ sub {
 }
 
 
-
 /*  for mobile devices  */
 @media only screen and (min-width: 300px) {
 
@@ -713,11 +712,29 @@ sub {
     border: 1px solid var(--surface_4);
     background-color: var(--surface_3);
     text-align: center;
+    color: var(--on_sur_1);
+    cursor: pointer;
+  }
+  
+  #nl_signup:hover {
+    background-color: var(--surface_4);
+  }
+  
+  #nl_signup.active {
     color: var(--primary);
+  }
+  
+  #nl_signup.active:hover {
+    background-color: var(--surface_3);
+    cursor: not-allowed;
+  }
+  
+  #nl_signup.complete {
     color: var(--on_sur_1);
   }
 
-  #nl_signup:hover {
+  #nl_signup.complete:hover {
+    cursor: pointer;
     background-color: var(--surface_4);
   }
 
@@ -800,14 +817,12 @@ sub {
   .checkbox_options > li > label > input[type=checkbox] {
     margin-right: 1em;
   }
-  
+
   .checkbox_options > li {
 
   }
 
 }
-
-
 
 /*  for tablets  */
 @media only screen and (min-width: 768px) {

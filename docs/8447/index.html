@@ -136,25 +136,57 @@
               <script>
                 $(document).ready(function() {
 
-                  var active = 0
+                  var active = false;
+                  var valid_email = false;
+                  var check_smt = true;
 
+                  // check if email is valid
+                  $('#nl_email').change(function() {
+
+                    const email_address = $(this).val();
+                    const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+                    valid_email = pattern.test(email_address);
+
+                    if (valid_email) {
+                      $('#nl_signup').addClass('complete');
+                    } else {
+                      $('#nl_signup').removeClass('complete');
+                    }
+
+                  });
+                  
+                  // check if any of the boxes are checked
+                  $('.checkbox_options').click(function() {
+                    check_smt = $('.checkbox_options input:checkbox:checked').length > 0;
+                  });
+
+                  // controll form and functionalities
                   $('#nl_signup').click(function() {
 
-                    if (active == 0) {
+                    if (!active) {
+
                       $('.email_input').addClass("active");
                       $('#nl_signup').addClass('active');
                       $('#nl_email').focus();
 
-                      active = 1;
+                      active = true;
 
-                    } else {
+                    } else if (valid_email) {
 
-                      //                      $('#nl_signup_form').submit()
                       $('#nl_submit').click();
 
                     }
 
                   });
+
+                  // prevent submitting invellid form on enter
+                  $('#nl_signup_form').submit(function(evt) {
+
+                    if (!valid_email) {evt.preventDefault()}
+
+                  });
+
                 });
               </script>
               <input id="nl_email" type="text" placeholder="e-mailadres" name="email" required>
