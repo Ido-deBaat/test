@@ -127,86 +127,126 @@
           <a class="discrete_link">poo</a>
         </p>
       </div>
-      <div class="newsletter_outer">
-        <div class="newsletter_inner">
-          <h3>blijf op de hoogte!</h3>
-          <p>We brengen regelmatig nieuwe producten uit of voegen nieuwe functionaliteiten toe aan onze website. Soms zijn er ook aanbiedingen. Als je van deze updates op de hoogte wilt blijven kun je je beneden aanmelden. We zullen je niet volspammen.</p>
-          <form id="nl_signup_form">
-            <div class="email_input">
-              <script>
-                $(document).ready(function() {
+      <section class="footer_tools">
+        <div class="footer_tools_inner">
+          <div class="newsletter_outer">
+            <div class="newsletter_inner">
+              <h4>Blijf op de hoogte!</h4>
+              <p>We brengen regelmatig nieuwe producten uit of voegen nieuwe functionaliteiten toe aan onze website. Soms zijn er ook aanbiedingen. Als je van deze updates op de hoogte wilt blijven kun je je beneden aanmelden. We zullen je niet volspammen.</p>
+              <form id="nl_signup_form">
+                <div class="email_input">
+                  <script>
+                    $(document).ready(function() {
 
-                  var active = false;
-                  var valid_email = false;
-                  var check_smt = true;
+                      var active = false;
+                      var valid_email = false;
+                      var check_smt = true;
 
-                  // check if email is valid
-                  $('#nl_email').change(function() {
+                      // check if email is valid
+                      $('#nl_email').change(function() {
 
-                    const email_address = $(this).val();
-                    const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+                        const email_address = $(this).val();
+                        const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
-                    valid_email = pattern.test(email_address);
+                        valid_email = pattern.test(email_address);
 
-                    if (valid_email) {
-                      $('#nl_signup').addClass('complete');
-                    } else {
-                      $('#nl_signup').removeClass('complete');
-                    }
+                        if (valid_email) {
+                          $('#nl_signup').addClass('complete');
+                        } else {
+                          $('#nl_signup').removeClass('complete');
+                        }
 
-                  });
-                  
-                  // check if any of the boxes are checked
-                  $('.checkbox_options').click(function() {
-                    check_smt = $('.checkbox_options input:checkbox:checked').length > 0;
-                  });
+                      });
 
-                  // controll form and functionalities
-                  $('#nl_signup').click(function() {
+                      // check if any of the boxes are checked
+                      $('.checkbox_options').click(function() {
+                        check_smt = $('.checkbox_options input:checkbox:checked').length > 0;
+                      });
 
-                    if (!active) {
+                      // controll form and functionalities
+                      $('#nl_signup').click(function() {
 
-                      $('.email_input').addClass("active");
-                      $('#nl_signup').addClass('active');
-                      $('#nl_email').focus();
+                        if (!active) {
 
-                      active = true;
+                          $('.email_input').addClass("active");
+                          $('#nl_signup').addClass('active');
+                          $('#nl_email').focus();
 
-                    } else if (valid_email) {
+                          active = true;
 
-                      $('#nl_submit').click();
+                        } else if (valid_email) {
 
-                    }
+                          $('#nl_submit').click();
 
-                  });
+                        }
 
-                  // prevent submitting invellid form on enter
-                  $('#nl_signup_form').submit(function(evt) {
+                      });
 
-                    if (!valid_email) {evt.preventDefault()}
+                      // prevent submitting invellid form on enter
+                      $('#nl_signup_form').submit(function(evt) {
 
-                  });
+                        if (!valid_email) {evt.preventDefault()}
 
-                });
-              </script>
-              <input id="nl_email" type="text" placeholder="e-mailadres" name="email" required>
-              <ul class="checkbox_options">
-                <li>
-                  <label><input type="checkbox" value="new products" checked><span class="bold">nieuws:</span> hooguit 6 keer per jaar</label>
-                </li>
-                <li>
-                  <label><input type="checkbox" value="new products" checked><span class="bold">aanbiedingen:</span> ook niet zo vaak</label>
-                </li>
-              </ul>
-              <div role="button" id="nl_signup">
-                <span class="msg_signup">schrijf je in voor de nieuwsbrief</span>
-                <span class="msg_send">verstuur</span>
-              </div>
-              <input type="submit" id="nl_submit">
+                      });
+
+                    });
+                  </script>
+                  <div class="email_input_outer">
+                    <input id="nl_email" type="text" placeholder="e-mailadres" name="email" required>
+                  </div>
+                  <ul class="checkbox_options">
+                    <li>
+                      <label><input type="checkbox" value="new products" checked><span class="bold">nieuws:</span> hooguit 6 keer per jaar</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="new products" checked><span class="bold">aanbiedingen:</span> ook niet zo vaak</label>
+                    </li>
+                  </ul>
+                  <div role="button" id="nl_signup">
+                    <span class="msg_signup">schrijf je in voor de nieuwsbrief</span>
+                    <span class="msg_send">verstuur</span>
+                  </div>
+                  <input type="submit" id="nl_submit">
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
+          <div class="footer_nav_outer">
+            <div class="footer_nav_inner">
+              <div class="footer_nav_group">
+                <h4><a class="discrete_link">shop</a></h4>
+                <ul>
+                  <li><a class="discrete_link">producten</a></li>
+                  <li><a class="discrete_link">betalen</a></li>
+                  <li><a class="discrete_link">bezorgen</a></li>
+                  <li><a class="discrete_link">ruilen en terugsturen</a></li>
+                  <li><a class="discrete_link">bestellingen</a></li>
+                  <li><a class="discrete_link">bestelling status</a></li>
+                  <li><a class="discrete_link">je moeder</a></li>
+                </ul>
+              </div>
+              <div class="footer_nav_group">
+                <h4><a class="discrete_link">meubelmakerij</a></h4>
+                <ul>
+                  <li><a class="discrete_link">diensten</a></li>
+                  <li><a class="discrete_link">portfolio</a></li>
+                  <li><a class="discrete_link">over Sepp de Baat</a></li>
+                  <li><a class="discrete_link">contact</a></li>
+                </ul>
+              </div>
+              <div class="footer_nav_group">
+                <h4><a class="discrete_link">cnc & laser service</a></h4>
+                <ul>
+                  <li><a class="discrete_link">portfolio</a></li>
+                  <li><a class="discrete_link">lorem ipsum</a></li>
+                  <li><a class="discrete_link">dolor sit amet</a></li>
+                  <li><a class="discrete_link">prijzen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
       <div class="quicklink_outer">
         <p class="quicklink_bar">
           <a class="discrete_link" href="">home</a>
@@ -223,6 +263,7 @@
         </div>
       </div>
     </footer>
+
 
   </body>
 
